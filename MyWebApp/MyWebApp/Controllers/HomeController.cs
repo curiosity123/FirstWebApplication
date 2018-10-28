@@ -9,9 +9,15 @@ namespace MyWebApp.Controllers
     public class HomeController: Controller
     {
 
-        public string Index()
+        public IActionResult Index()
         {
-            return "yoo";
+            return View(new Test() { Name = "Łukasz" });
         }
+    }
+
+
+    public class Test
+    {
+        public string Name = "Łukasz";
     }
 }
