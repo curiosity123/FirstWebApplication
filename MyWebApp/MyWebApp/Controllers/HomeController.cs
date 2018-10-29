@@ -6,18 +6,37 @@ using System.Threading.Tasks;
 
 namespace MyWebApp.Controllers
 {
-    public class HomeController: Controller
+    public class HomeController : Controller
     {
 
         public IActionResult Index()
         {
-            return View(new Test() { Name = "Łukasz" });
+            return View();
         }
-    }
 
 
-    public class Test
-    {
-        public string Name = "Łukasz";
+
+
+        public IActionResult About()
+        {
+            return View();
+
+        }
+
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult Dev()
+        {
+            return View();
+        }
+
+        public IActionResult Blog()
+        {
+            return View();
+        }
     }
 }
