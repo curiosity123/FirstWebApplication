@@ -17,6 +17,7 @@ namespace MyWebApp.Models
         public Post()
         {
             Id = Guid.NewGuid();
+            Created = DateTime.Now;
         }
     }
 }
