@@ -34,9 +34,13 @@ namespace MyWebApp.Controllers
             return View();
         }
 
-        public IActionResult Blog()
+
+        public IActionResult Error()
         {
-            return View();
+            Exception ex = new NullReferenceException();
+
+            return View(ex);
         }
+
     }
 }

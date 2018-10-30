@@ -8,12 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyWebApp.Controllers
 {
-    public class AboutController : Controller
+    public class BlogController : Controller
     {
-        // GET: /<controller>/
-        public IActionResult Index()
+
+        public IActionResult AllPosts()
         {
-            return View();//new ObjectResult(new { name = "nazwaa", id = 1234 });
+            return List<>
         }
+
     }
 }

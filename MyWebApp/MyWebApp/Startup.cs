@@ -33,11 +33,11 @@ namespace MyWebApp
             app.UseMvc(ConfigureRoutes);
 
             
-            app.Run(async (context) =>
-            {
-                context.Response.ContentType="text/plain";
-                await context.Response.WriteAsync("Hello  World!");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    context.Response.ContentType="text/plain";
+            //    await context.Response.WriteAsync("Not Fount :( ");
+            //});
         }
 
         private void ConfigureRoutes(IRouteBuilder routeBuilder)
