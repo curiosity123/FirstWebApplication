@@ -10,7 +10,10 @@
     @foreach (Post p in Model)
     {
         <tr>
-            <td>@p.Title</td>
+            <div>
+                <h1>@p.Title  @p.Created</h1>
+                <h2>@p.Content</h2>
+            </div>
         </tr>
     }
 </table>
