@@ -18,9 +18,10 @@ namespace MyWebApp.Repositories
             PostList.Add(new Post { Title = "Post testowy2", Content = "Jakiś kontent2" });
         }
 
-        public void AddNewPost(Post post)
+        public Post Create(Post post)
         {
             PostList.Add(post);
+            return PostList.FirstOrDefault(x=>x.Id == post.Id);
         }
 
         public Post Get(Guid id)

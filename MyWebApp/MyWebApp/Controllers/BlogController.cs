@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using MyWebApp.Models;
 using MyWebApp.Repositories;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -34,6 +36,20 @@ namespace MyWebApp.Controllers
                 return RedirectToAction(nameof(AllPosts));
             else
                 return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(PostDTO post)
+        {
+            Post newPost = Mapper.Map<Post>(post);
+
+            return RedirectToAction("Details",repository.Create(newPost));
         }
     }
 }

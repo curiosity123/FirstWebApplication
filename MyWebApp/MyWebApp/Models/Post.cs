@@ -8,6 +8,7 @@ namespace MyWebApp.Models
     public class Post
     {
         public Guid Id { get; set; }
+        public PostType Type { get; set; }
         public DateTime Created { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
@@ -18,6 +19,9 @@ namespace MyWebApp.Models
         {
             Id = Guid.NewGuid();
             Created = DateTime.Now;
+            Type = PostType.Other;
+            Content = "Empty";
+            Title = "Empty";
         }
     }
 }

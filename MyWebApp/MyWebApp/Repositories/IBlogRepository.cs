@@ -8,7 +8,7 @@ namespace MyWebApp.Repositories
     {
 
 
-        void AddNewPost(Post post);
+        Post Create(Post post);
         void RemovePost(Guid id);
         List<Post> GetAll();
         Post Get(Guid id);
