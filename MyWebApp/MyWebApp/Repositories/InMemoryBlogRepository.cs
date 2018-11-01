@@ -24,6 +24,14 @@ namespace MyWebApp.Repositories
             return PostList.FirstOrDefault(x=>x.Id == post.Id);
         }
 
+        public Post Edit(Post post)
+        {
+            var editedPost = PostList.FirstOrDefault(x => x.Id == post.Id);
+            editedPost.Title = post.Title;
+            editedPost.Content = post.Content;
+            return editedPost;
+        }
+
         public Post Get(Guid id)
         {
             return PostList.FirstOrDefault(x => x.Id == id);

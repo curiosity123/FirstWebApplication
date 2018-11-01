@@ -12,6 +12,7 @@ namespace MyWebApp.Repositories
         void RemovePost(Guid id);
         List<Post> GetAll();
         Post Get(Guid id);
+        Post Edit(Post post);
 
 
     }

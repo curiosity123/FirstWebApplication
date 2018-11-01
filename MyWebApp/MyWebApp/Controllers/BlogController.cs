@@ -45,11 +45,31 @@ namespace MyWebApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(PostDTO post)
         {
-            Post newPost = Mapper.Map<Post>(post);
 
-            return RedirectToAction("Details",repository.Create(newPost));
+            if (ModelState.IsValid)
+            {
+                Post newPost = Mapper.Map<Post>(post);
+
+                return RedirectToAction("Details", repository.Create(newPost));
+            }
+            else
+                return View();
+        }
+
+
+        public IActionResult Edit(Guid id)
+        {
+            return View(repository.Get(id));
+        }
+
+
+        [HttpPost]
+        public IActionResult Edit(Post post)
+        {
+            return RedirectToAction("Details", repository.Edit(post));
         }
     }
 }
