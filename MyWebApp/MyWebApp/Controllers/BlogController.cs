@@ -24,5 +24,16 @@ namespace MyWebApp.Controllers
             return View(repository.GetAll());
         }
 
+
+        public IActionResult Details(Guid id)
+        {
+            var model = repository.Get(id);
+
+
+            if (model == null)
+                return RedirectToAction(nameof(AllPosts));
+            else
+                return View(model);
+        }
     }
 }

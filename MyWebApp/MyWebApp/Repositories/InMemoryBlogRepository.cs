@@ -23,6 +23,11 @@ namespace MyWebApp.Repositories
             PostList.Add(post);
         }
 
+        public Post Get(Guid id)
+        {
+            return PostList.FirstOrDefault(x => x.Id == id);
+        }
+
         public List<Post> GetAll()
         {
             return PostList;

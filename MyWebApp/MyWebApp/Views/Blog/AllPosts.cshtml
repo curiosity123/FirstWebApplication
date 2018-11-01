@@ -10,10 +10,13 @@
     @foreach (Post p in Model)
     {
         <tr>
-            <div>
-                <h1>@p.Title  @p.Created</h1>
-                <h2>@p.Content</h2>
-            </div>
+                <td>@p.Title  @p.Created</td>
+                <td>@p.Content</td>
+                <td>@p.Id</td>
+                <td>
+                    @*<a href="/blog/details?id=@p.Id">Details</a>*@
+                    <a asp-action="Details" asp-route-id="@p.Id">Get details</a>
+                </td>
         </tr>
     }
 </table>
