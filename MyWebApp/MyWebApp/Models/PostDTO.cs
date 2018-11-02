@@ -12,6 +12,6 @@ namespace MyWebApp.Models
         [DataType(DataType.Text)]
         [Required, MaxLength(10)]
         public string Title { get; set; }
-        public PostType Type { get; set; }
+        public Category Type { get; set; }
     }
 }

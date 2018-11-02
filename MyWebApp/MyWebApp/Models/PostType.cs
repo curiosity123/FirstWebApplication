@@ -1,9 +1,10 @@
 ﻿namespace MyWebApp.Models
 {
-    public enum PostType
+    public enum Category
     {
-        Sport,
         Programming,
+        Sport,
+        Music,
         Other
     }
 }

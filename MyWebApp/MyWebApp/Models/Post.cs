@@ -10,8 +10,7 @@ namespace MyWebApp.Models
     {
         public Guid Id { get; set; }
 
-        public PostType Type { get; set; }
-
+        public Category Category { get; set; }
         public DateTime Created { get; set; }
         [Display(Name ="Title")]
         [DataType(DataType.Text)]
@@ -25,9 +24,9 @@ namespace MyWebApp.Models
         {
             Id = Guid.NewGuid();
             Created = DateTime.Now;
-            Type = PostType.Other;
-            Content = "Empty";
-            Title = "Empty";
+            Category = Category.Other;
+            Content = "";
+            Title = "";
         }
     }
 }
