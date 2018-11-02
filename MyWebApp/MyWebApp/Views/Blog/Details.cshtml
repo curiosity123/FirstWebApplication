@@ -11,7 +11,7 @@
 
 <h1>@Model.Title</h1>
 <div>
-    @Model.Content
+    @Html.Raw(Model.HtmlContent)
 </div>
 <div>@Model.Created</div>
 
