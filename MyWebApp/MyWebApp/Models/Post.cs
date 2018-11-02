@@ -12,12 +12,11 @@ namespace MyWebApp.Models
 
         public Category Category { get; set; }
         public DateTime Created { get; set; }
-        [Display(Name ="Title")]
+        [Display(Name = "Title")]
         [DataType(DataType.Text)]
         [Required, MaxLength(10)]
         public string Title { get; set; }
-        public string Content { get; set; }
-        public bool Published { get; set; }
+        public string HtmlContent { get; set; }
 
 
         public Post()
@@ -25,7 +24,7 @@ namespace MyWebApp.Models
             Id = Guid.NewGuid();
             Created = DateTime.Now;
             Category = Category.Other;
-            Content = "";
+            HtmlContent = "";
             Title = "";
         }
     }

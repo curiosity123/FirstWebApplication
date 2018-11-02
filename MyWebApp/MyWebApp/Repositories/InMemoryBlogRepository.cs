@@ -13,9 +13,9 @@ namespace MyWebApp.Repositories
 
         public InMemoryBlogRepository()
         {
-            PostList.Add(new Post { Title = "Post testowy", Content = "Jakiś kontent" });
-            PostList.Add(new Post { Title = "Post testowy1", Content = "Jakiś kontent1" });
-            PostList.Add(new Post { Title = "Post testowy2", Content = "Jakiś kontent2" });
+            PostList.Add(new Post { Title = "Post testowy", HtmlContent = "Jakiś kontent" });
+            PostList.Add(new Post { Title = "Post testowy1", HtmlContent = "Jakiś kontent1" });
+            PostList.Add(new Post { Title = "Post testowy2", HtmlContent = "Jakiś kontent2" });
         }
 
         public Post Create(Post post)
@@ -28,7 +28,7 @@ namespace MyWebApp.Repositories
         {
             var editedPost = PostList.FirstOrDefault(x => x.Id == post.Id);
             editedPost.Title = post.Title;
-            editedPost.Content = post.Content;
+            editedPost.HtmlContent = post.HtmlContent;
             return editedPost;
         }
 

@@ -8,10 +8,13 @@ namespace MyWebApp.Models
 {
     public class PostDTO
     {
+
+        public Category Category { get; set; }
+        public DateTime Created { get; set; }
         [Display(Name = "enter Title")]
         [DataType(DataType.Text)]
         [Required, MaxLength(10)]
         public string Title { get; set; }
-        public Category Type { get; set; }
+        public string HtmlContent { get; set; }
     }
 }
