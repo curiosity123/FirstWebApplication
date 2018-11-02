@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "b2fc0d95ed7c4d8958ea802b59c5f5d2f2cba4a0"
+    "signature": "a8634a1d668f3b4faea6ef2164b187bb72d70e84"
   },
   "compilationOptions": {
     "defines": [
@@ -26,7 +26,8 @@
           "AutoMapper": "7.0.1",
           "Microsoft.AspNetCore.All": "2.0.5",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.2"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.2",
+          "summernote.editor": "0.8.10"
         },
         "runtime": {
           "MyWebApp.dll": {}
@@ -2802,6 +2803,7 @@
           "lib/netstandard1.5/StackExchange.Redis.StrongName.dll": {}
         }
       },
+      "summernote.editor/0.8.10": {},
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -5683,6 +5685,13 @@
       "sha512": "sha512-qrfSB1BnmM17V20A4yvvNA0HNiDgnBd/CcjaeMKMA4qtup1uuBUMyhl20oj31fRVo71E/fXTbmQCuM9ytBJs6w==",
       "path": "stackexchange.redis.strongname/1.2.4",
       "hashPath": "stackexchange.redis.strongname.1.2.4.nupkg.sha512"
+    },
+    "summernote.editor/0.8.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GiKO9DLL4B/oNnRPdHctl9rkjkGKKr6QMQIlezaShkPlZV3u5EdkRXNCSKTJ7Apiq+E+HejPICNHUrWWy2NLnw==",
+      "path": "summernote.editor/0.8.10",
+      "hashPath": "summernote.editor.0.8.10.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
