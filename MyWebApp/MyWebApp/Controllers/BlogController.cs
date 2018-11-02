@@ -38,10 +38,10 @@ namespace MyWebApp.Controllers
                 return View(model);
         }
 
-        [HttpGet]
-        public IActionResult Create()
+
+        public IActionResult Create(Guid id)
         {
-            return View();
+            return View(new PostDTO());
         }
 
         [HttpPost]

@@ -10,7 +10,6 @@ namespace MyWebApp.Models
     {
 
         public Category Category { get; set; }
-        public DateTime Created { get; set; }
         [Display(Name = "enter Title")]
         [DataType(DataType.Text)]
         [Required, MaxLength(10)]
