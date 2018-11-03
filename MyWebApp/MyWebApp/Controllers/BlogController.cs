@@ -21,19 +21,19 @@ namespace MyWebApp.Controllers
         }
 
 
-        public IActionResult AllPosts()
+        public IActionResult PostList()
         {
             return View(repository.GetAll());
         }
 
 
-        public IActionResult Details(Guid id)
+        public IActionResult Post(Guid id)
         {
             var model = repository.Get(id);
 
 
             if (model == null)
-                return RedirectToAction(nameof(AllPosts));
+                return RedirectToAction(nameof(PostList));
             else
                 return View(model);
         }
@@ -41,28 +41,32 @@ namespace MyWebApp.Controllers
 
         public IActionResult Create(Guid id)
         {
-            return View(new PostDTO());
+            ViewBag.Title = "Create new post";
+            ViewBag.ButtonTitle = "Save post";
+            return View("Modify",new Post());
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(PostDTO post)
+        public IActionResult Create(Post post)
         {
 
             if (ModelState.IsValid)
             {
-                Post newPost = Mapper.Map<Post>(post);
+               // Post newPost = Mapper.Map<Post>(post);
 
-                return RedirectToAction("Details", repository.Create(newPost));
+                return RedirectToAction("Details", repository.Create(post));
             }
             else
-                return View();
+                return View("Modify");
         }
 
 
         public IActionResult Edit(Guid id)
         {
-            return View(repository.Get(id));
+            ViewBag.Title = "Edit your post";
+            ViewBag.ButtonTitle = "Confirm";
+            return View("Modify",repository.Get(id));
         }
 
 

@@ -14,6 +14,7 @@ namespace MyWebApp.Models
         [DataType(DataType.Text)]
         [Required, MaxLength(10)]
         public string Title { get; set; }
+        public string ShortDescription { get; set; }
         public string HtmlContent { get; set; }
     }
 }

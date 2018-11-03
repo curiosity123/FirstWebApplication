@@ -1,7 +1,7 @@
-﻿@using MyWebApp.Models
-@using System.Collections.Generic
-@using System
-@model PostDTO
+﻿@{
+    @using MyWebApp.Models
+    @model Post
+}
 
 <meta charset="UTF-8">
 <title>bootstrap4</title>
@@ -9,21 +9,25 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
 
+<h1>@ViewBag.Title</h1>
 
-<h1>Creating a post</h1>
+
 <form method="post">
-
     <div>
+        <label asp-for="Category">Category</label>
         <select asp-for="Category" asp-items="@Html.GetEnumSelectList<Category>()"></select>
         <label asp-for="Title">Title</label>
         <input asp-for="Title" value="@Model.Title"></>
-        <span asp-validation-for="Title"></span>
+
+        <label asp-for="ShortDescription">ShortDescription</label>  
+        <textarea asp-for="ShortDescription" value="@Model.ShortDescription"></textarea>
     </div>
+  
     <textarea asp-for="HtmlContent" id="summernote"></textarea>
-
-    <input type="submit" name="save" value="save" />
-
+    
+    <input type="submit" name="save" value="@ViewBag.ButtonTitle" />
 </form>
+
 
 <script>
     $('#summernote').summernote({
@@ -32,3 +36,4 @@
         height: 200
     });
 </script>
+
