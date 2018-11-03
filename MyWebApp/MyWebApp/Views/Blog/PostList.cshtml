@@ -1,26 +1,16 @@
-﻿@{
-    @using MyWebApp.Models
-    @using System.Collections.Generic
-    @model List<Post>
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
+﻿@using MyWebApp.Models
+@model List<Post>
 
 <table>
     @foreach (Post p in Model)
     {
         <tr>
-            <td>@p.Title  @p.Created</td>
-            <td>@p.HtmlContent</td>
-            <td>
-                <a asp-action="Post" asp-route-id="@p.Id">Get details</a>
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@p.Id">Edit</a>
-            </td>
+            <td>@p.Title</td>
+            <td>Created at:@p.Created</td>
+            <td>@p.ShortDescription</td>
+            <td><a asp-action="Post" asp-route-id="@p.Id">Read more</a></td>
+            <td><a asp-action="Edit" asp-route-id="@p.Id">Edit</a></td>
         </tr>
-
     }
-
-    <a asp-action="Create">Create</a>
 </table>
+<a asp-action="Create">Create new post</a>
