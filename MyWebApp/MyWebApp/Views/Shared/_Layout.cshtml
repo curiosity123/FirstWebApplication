@@ -4,28 +4,63 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title >@ViewBag.Title</title>
 
+
+<!DOCTYPE html>
+
+@*<style>
+        header{
+            background-color:gray
+        }
+    </style>*@
+
+<link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<html>
+
+<head>
+    @*<meta name="viewport" content="width=device-width" />*@
+    <title>@ViewBag.Title</title>
 </head>
 
 
 <body>
-    <div class="container">  Test</div>
-    <ul>
-        <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
-        <li>@Html.ActionLink("O mnie", "About", "Home")</li>
-        <li>@Html.ActionLink("Moje projekty", "Dev", "Home")</li>
-        <li>@Html.ActionLink("Blog", "PostList", "Blog")</li>
-    </ul>
+    <header class="container-fluid">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+            <h1 class="navbar-brand">Łukasz Adach</h1>
+            <button class="navbar-toggler" type="submit" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div id="menu" class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Contact">Kontakt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="About">O mnie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Dev">Projekty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Blog" asp-action="PostList">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-    <div>
+    <div class="container-fluid">
         @RenderBody()
     </div>
 
+    <footer class="text-center">
+        <a>CopyRight Adach</a>
+    </footer>
+
 </body>
+
 </html>
+<script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
