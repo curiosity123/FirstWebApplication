@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
+using MyWebApp.Middleware;
 using MyWebApp.Models;
 using MyWebApp.Repositories;
 
@@ -37,6 +38,8 @@ namespace MyWebApp
             }
 
             app.UseStaticFiles();
+
+            app.UseNodeModules(env.ContentRootPath);
             app.UseMvc(ConfigureRoutes);
 
             
