@@ -25,15 +25,15 @@
 
 
 <body>
-    <header class="container-fluid">
+    <header>
         <nav class="navbar navbar-dark bg-dark navbar-expand-md">
             <h1 class="navbar-brand">Łukasz Adach</h1>
             <button class="navbar-toggler" type="submit" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div id="menu" class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
+            <div id="menu" class="collapse navbar-collapse navbar-bottom">
+                <ul class="navbar-nav mr-auto navbar-right">
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Home" asp-action="Contact">Kontakt</a>
                     </li>
@@ -47,16 +47,23 @@
                         <a class="nav-link" asp-controller="Blog" asp-action="PostList">Blog</a>
                     </li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="btn btn-info" href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+                </ul>
             </div>
         </nav>
     </header>
 
-    <div class="container-fluid">
+    <div>
         @RenderBody()
     </div>
 
-    <footer class="text-center">
-        <a>CopyRight Adach</a>
+
+
+
+    <footer class="container-fluid fixed-bottom text-center bg-dark">
+        <a class="text-center text-muted">Copyright 2018 Łukasz Adach</a>
     </footer>
 
 </body>
