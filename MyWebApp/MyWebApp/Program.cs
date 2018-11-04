@@ -20,6 +20,8 @@ namespace MyWebApp
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                 .CaptureStartupErrors(true)
+            .UseSetting("detailedErrors", "true")
                 .Build();
     }
 }

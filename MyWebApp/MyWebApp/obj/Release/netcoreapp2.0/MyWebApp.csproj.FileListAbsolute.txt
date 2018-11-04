@@ -1,0 +1,11 @@
+C:\GitRepo\MyWebApp\MyWebApp\bin\Release\netcoreapp2.0\MyWebApp.deps.json
+C:\GitRepo\MyWebApp\MyWebApp\bin\Release\netcoreapp2.0\MyWebApp.runtimeconfig.json
+C:\GitRepo\MyWebApp\MyWebApp\bin\Release\netcoreapp2.0\MyWebApp.runtimeconfig.dev.json
+C:\GitRepo\MyWebApp\MyWebApp\bin\Release\netcoreapp2.0\MyWebApp.dll
+C:\GitRepo\MyWebApp\MyWebApp\bin\Release\netcoreapp2.0\MyWebApp.pdb
+C:\GitRepo\MyWebApp\MyWebApp\obj\Release\netcoreapp2.0\MyWebApp.csprojResolveAssemblyReference.cache
+C:\GitRepo\MyWebApp\MyWebApp\obj\Release\netcoreapp2.0\MyWebApp.csproj.CoreCompileInputs.cache
+C:\GitRepo\MyWebApp\MyWebApp\obj\Release\netcoreapp2.0\MyWebApp.AssemblyInfoInputs.cache
+C:\GitRepo\MyWebApp\MyWebApp\obj\Release\netcoreapp2.0\MyWebApp.AssemblyInfo.cs
+C:\GitRepo\MyWebApp\MyWebApp\obj\Release\netcoreapp2.0\MyWebApp.dll
+C:\GitRepo\MyWebApp\MyWebApp\obj\Release\netcoreapp2.0\MyWebApp.pdb

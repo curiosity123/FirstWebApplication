@@ -1,0 +1,15 @@
+C:\GitRepo\MyWebApp\MyWebApp
+--output-path=obj\Any CPU\Release\netcoreapp2.0\
+--application-name=MyWebApp
+--content-root=C:\GitRepo\MyWebApp\MyWebApp
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Blog\Modify.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Blog\Post.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Blog\PostList.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\About.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\Contact.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\Dev.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\Error.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\Index.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Shared\_Layout.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\_ViewImports.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\_ViewStart.cshtml
