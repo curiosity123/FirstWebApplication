@@ -77,7 +77,7 @@ namespace MyWebApp.Controllers
         public IActionResult Edit(Post post)
         {
             repository.Edit(post);
-            return RedirectToAction("PostList", repository.Create(post));
+            return RedirectToAction("PostList", repository.GetAll());
         }
     }
 }

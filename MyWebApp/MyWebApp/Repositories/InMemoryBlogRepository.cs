@@ -29,6 +29,8 @@ namespace MyWebApp.Repositories
         {
             var editedPost = PostList.FirstOrDefault(x => x.Id == post.Id);
             editedPost.Title = post.Title;
+            editedPost.Category = post.Category;
+            editedPost.ShortDescription = post.ShortDescription;
             editedPost.HtmlContent = post.HtmlContent;
             return editedPost;
         }
