@@ -13,9 +13,10 @@ namespace MyWebApp.Repositories
 
         public InMemoryBlogRepository()
         {
-            PostList.Add(new Post { Title = "Post testowy", HtmlContent = "Jakiś kontent" });
-            PostList.Add(new Post { Title = "Post testowy1", HtmlContent = "Jakiś kontent1" });
-            PostList.Add(new Post { Title = "Post testowy2", HtmlContent = "Jakiś kontent2" });
+            PostList.Add(new Post { Title = "Flat button w xaml", ShortDescription="Krótki poradnik jak ostylować przycisk pod styl flat...", HtmlContent = "Jakiś kontent" });
+            PostList.Add(new Post { Title = "Flat button w xaml", ShortDescription = "Krótki poradnik jak ostylować przycisk pod styl flat...", HtmlContent = "Jakiś kontent" });
+            PostList.Add(new Post { Title = "Flat button w xaml", ShortDescription = "Krótki poradnik jak ostylować przycisk pod styl flat...", HtmlContent = "Jakiś kontent" });
+
         }
 
         public Post Create(Post post)

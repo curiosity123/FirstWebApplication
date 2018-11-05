@@ -39,7 +39,7 @@ namespace MyWebApp.Controllers
         {
             ViewBag.Title = "Create new post";
             ViewBag.ButtonTitle = "Save post";
-            return View("Modify",new Post());
+            return View("Modify", new Post());
         }
 
         [HttpPost]
@@ -49,9 +49,9 @@ namespace MyWebApp.Controllers
 
             if (ModelState.IsValid)
             {
-               // Post newPost = Mapper.Map<Post>(post);
+                // Post newPost = Mapper.Map<Post>(post);
 
-                return RedirectToAction("Details", repository.Create(post));
+                return RedirectToAction("PostList", repository.Create(post));
             }
             else
                 return View("Modify");
@@ -62,14 +62,22 @@ namespace MyWebApp.Controllers
         {
             ViewBag.Title = "Edit your post";
             ViewBag.ButtonTitle = "Confirm";
-            return View("Modify",repository.Get(id));
+            return View("Modify", repository.Get(id));
+        }
+
+
+        public IActionResult Remove(Guid id)
+        {
+            repository.RemovePost(id);
+            return View("PostList", repository.GetAll());
         }
 
 
         [HttpPost]
         public IActionResult Edit(Post post)
         {
-            return RedirectToAction("Details", repository.Edit(post));
+            repository.Edit(post);
+            return RedirectToAction("PostList", repository.Create(post));
         }
     }
 }
