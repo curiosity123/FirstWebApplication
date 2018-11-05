@@ -6,6 +6,7 @@ C:\GitRepo\MyWebApp\MyWebApp
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Blog\Post.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Blog\PostList.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\About.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\AdminForm.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\Contact.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\Dev.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\Error.cshtml
