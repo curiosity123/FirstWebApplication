@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,5 +44,25 @@ namespace MyWebApp.Controllers
             return View(ex);
         }
 
+
+        public IActionResult AdminForm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AdminForm(Credentials credentials)
+        {
+            if (credentials.Login == "admin" && credentials.Password=="password")
+            {
+                ViewBag.Title = "Witaj Łukasz";
+                return View("Index");
+            }
+            else
+            {
+                ViewBag.Error = "zły login lub hasło";
+                return View();
+            }
+        }
     }
 }

@@ -19,7 +19,6 @@
 <html>
 
 <head>
-    @*<meta name="viewport" content="width=device-width" />*@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewBag.Title</title>
 </head>
@@ -39,10 +38,7 @@
                         <a class="nav-link" asp-controller="Blog" asp-action="PostList">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Dev">Kursy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Dev">Moje projekty</a>
+                        <a class="nav-link " asp-controller="Home" asp-action="Dev">Moje projekty</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Home" asp-action="About">O mnie</a>
@@ -52,7 +48,7 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="btn btn-info" href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a class="btn btn-info" asp-controller="Home" asp-action="AdminForm"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             </div>
         </nav>
@@ -65,7 +61,7 @@
 
 
 
-    <footer class="container-fluid fixed-bottom text-center bg-dark">
+    <footer class="container-fluid  text-center bg-dark mt-4">
         <a class="text-center text-muted">Copyright 2018 Łukasz Adach</a>
     </footer>
 

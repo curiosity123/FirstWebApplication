@@ -1,0 +1,18 @@
+﻿
+@model Credentials
+
+
+<h1 class="container text-center mt-5">Logowanie do panelu admina</h1>
+
+<form method="post" class="container text-center mt-5">
+    <div class="mt5">    <a></a>Login</div>
+    <div class="mt5">    <input class="form-control col-4 offset-4" asp-for="Login" /></div>
+    <div class="mt5">    <a />Hasło</div>
+    <div class=" mt-1">    <input class="form-control  col-4 offset-4" asp-for="Password" /></div>
+    <div class=" mt-1"> <input class="btn btn-primary" type="submit" name="Login" value="Login" /></div>
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-warning">
+            <strong>Błąd!</strong> @ViewBag.Error
+        </div>}
+</form>
