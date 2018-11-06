@@ -38,7 +38,7 @@ namespace MyWebApp.Controllers
         public IActionResult Create(Guid id)
         {
             ViewBag.Title = "Create new post";
-            ViewBag.ButtonTitle = "Save post";
+            ViewBag.ButtonTitle = "Zapisz";
             return View("Modify", new Post());
         }
 
@@ -61,7 +61,7 @@ namespace MyWebApp.Controllers
         public IActionResult Edit(Guid id)
         {
             ViewBag.Title = "Edit your post";
-            ViewBag.ButtonTitle = "Confirm";
+            ViewBag.ButtonTitle = "Zapisz";
             return View("Modify", repository.Get(id));
         }
 

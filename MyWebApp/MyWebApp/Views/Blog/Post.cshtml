@@ -6,10 +6,16 @@
 
 
 
-<h1>@Model.Title</h1>
-<div>
+<div class="container text-center bg-light mt-5">
+    <h1>@Model.Title</h1>
+    <h6>Utworzono: @Model.Created</h6>
+</div>
+
+<div class="container bg-light">
     @Html.Raw(Model.HtmlContent)
 </div>
-<div>@Model.Created</div>
 
-<a class="btn btn-info" asp-action="PostList" asp-controller="Blog">Back to home</a>
+
+<div class="container text-center mt-4 mb-4">
+    <a class="btn btn-outline-info mb-4" asp-action="PostList" asp-controller="Blog">Powrót do listy</a>
+</div>
