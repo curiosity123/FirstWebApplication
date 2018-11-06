@@ -5,16 +5,16 @@
 
 
 <div>
-    <div class="container  bg-light text-dark col-8 offset-2">
-        <div class="container text-center mt-5"><a class="h1">Mini blog :)</a></div>
-        <div class="container text-center mb-5 mt-2"><a class="h6">Tutaj poczytasz na tematy które mnie interesują i którymi chcę się podzielić z innymi</a></div>
+    <div class="alert alert-success" role="alert">
+        <div class="container text-center "><a class="h1">Mini blog :)</a></div>
+        <div class="container text-center  mt-2"><a class="h6">Tutaj poczytasz na tematy które mnie interesują i którymi chcę się podzielić z innymi</a></div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
 
         @foreach (Post p in Model)
-    {
-        <div class="container bg-light mt-4 rounded">
+        {
+        <div class="alert alert-info" role="alert">
             <div class="container text-center"><a asp-action="Post" asp-route-id="@p.Id" class="h1">@p.Title</a></div>
 
             <div class="container text-center text-justify h5  text-secondary">
@@ -22,13 +22,17 @@
             </div>
 
             <div class="container text-center h6">
-                <a>Utworzony: @p.Created</a>
+                <a class="text-black-50 ">Utworzony: @p.Created</a>
+
+            </div>
+            <div class="container text-center h6">
+                <a class="text-black-50">Kategoria: @p.Category</a>
             </div>
 
-            <div class="container text-right">
+            <div class="text-right ">
                 <a class="btn btn-primary mb-2" asp-action="Post" asp-route-id="@p.Id">Czytaj dalej</a>
-                <a class="btn btn-warning mb-2" asp-action="Edit" asp-route-id="@p.Id">Edytuj</a>
-                <a class="btn btn-warning mb-2" data-toggle="modal" data-target="#ModalRemove">Usuń</a>
+                <a class="btn btn-outline-warning mb-2" asp-action="Edit" asp-route-id="@p.Id">Edytuj</a>
+                <button class="btn btn-outline-warning mb-2" data-toggle="modal" data-target="#ModalRemove">Usuń</button>
 
 
                 <div class="modal fade" id="ModalRemove" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -44,8 +48,8 @@
                                 Czy napewno chcesz usunąć ten wpis?
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
-                                <a  class="btn btn-primary"  asp-controller="Blog" asp-action="Remove" asp-route-id="@p.Id">Usuń</a>
+                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Anuluj</button>
+                                <a class="btn btn-outline-primary " asp-controller="Blog" asp-action="Remove" asp-route-id="@p.Id">Usuń</a>
                             </div>
                         </div>
                     </div>
@@ -53,15 +57,15 @@
 
             </div>
         </div>
-}
+        }
 
 
 
 
-       
+
 
 
 
     </div>
-    <div class="container text-center mt-3 mb-3"> <a class="btn btn-success " asp-action="Create">Stwórz nowy post</a></div>
+    <div class="container text-center mt-3 mb-3"> <a class="btn btn-outline-success " asp-action="Create">Stwórz nowy post</a></div>
 </div>

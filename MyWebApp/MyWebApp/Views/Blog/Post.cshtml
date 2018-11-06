@@ -6,13 +6,14 @@
 
 
 
-<div class="container text-center bg-light mt-5">
-    <h1>@Model.Title</h1>
+<div class="alert alert-success" role="alert">
+    <h1 class="container-fluid text-center ">@Model.Title</h1>
     <h6>Utworzono: @Model.Created</h6>
 </div>
 
+
 <div class="container bg-light">
-    @Html.Raw(Model.HtmlContent)
+    <div style=" text-align: justify"> @Html.Raw(Model.HtmlContent)</div>
 </div>
 
 
