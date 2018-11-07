@@ -12,7 +12,7 @@ namespace MyWebApp.Repositories
 
         public XmlBlogRepository()
         {
-       
+
 
         }
 

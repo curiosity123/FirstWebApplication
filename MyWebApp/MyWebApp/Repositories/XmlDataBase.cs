@@ -4,10 +4,10 @@ using System.Xml.Serialization;
 
 namespace MyWebApp.Repositories
 {
-    public class XmlDataBase<T>
+    public static class XmlDataBase<T>
     {
 
-        public List<T> Load()
+        public static List<T> Load()
         {
             if (!File.Exists(typeof(T).Name + ".xml"))
                 return new List<T>();
@@ -18,7 +18,7 @@ namespace MyWebApp.Repositories
             }
         }
 
-        public void Save(List<T> items)
+        public static void Save(List<T> items)
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<T>));
             TextWriter tw = new StreamWriter(typeof(T).Name + ".xml");
