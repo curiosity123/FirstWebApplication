@@ -8,55 +8,57 @@
     <div class="alert alert-success" role="alert">
         <div class="container text-center "><a class="h1">Mini blog :)</a></div>
         <div class="container text-center  mt-2"><a class="h6">Tutaj poczytasz na tematy które mnie interesują i którymi chcę się podzielić z innymi</a></div>
+
+
     </div>
 
     <div class="container-fluid">
 
         @foreach (Post p in Model)
         {
-        <div class="alert alert-info" role="alert">
-            <div class="container text-center"><a asp-action="Post" asp-route-id="@p.Id" class="h1">@p.Title</a></div>
+            <div class="alert alert-info" role="alert">
+                <div class="container text-center alert alert-heading" style=" text-align: justify; word-wrap: break-word;"><a asp-action="Post" asp-route-id="@p.Id" class="h1">@p.Title</a></div>
 
-            <div class="container text-center text-justify h5  text-secondary">
-                <a>@p.ShortDescription</a>
-            </div>
+                <div class="container  text-center  h5  alert alert-info" style=" word-wrap: break-word;">
+                    <a>@p.ShortDescription</a>
+                </div>
 
-            <div class="container text-center h6">
-                <a class="text-black-50 ">Utworzony: @p.Created</a>
+                <div class="container text-center h6">
+                    <a class="text-black-50">Utworzony: @p.Created</a>
 
-            </div>
-            <div class="container text-center h6">
-                <a class="text-black-50">Kategoria: @p.Category</a>
-            </div>
+                </div>
+                <div class="container text-center h6">
+                    <a class="text-black-50">Kategoria: @p.Category</a>
+                </div>
 
-            <div class="text-right ">
-                <a class="btn btn-primary mb-2" asp-action="Post" asp-route-id="@p.Id">Czytaj dalej</a>
-                <a class="btn btn-outline-warning mb-2" asp-action="Edit" asp-route-id="@p.Id">Edytuj</a>
-                <button class="btn btn-outline-warning mb-2" data-toggle="modal" data-target="#ModalRemove">Usuń</button>
+                <div class="text-right ">
+                    <a class="btn btn-primary mb-2" asp-action="Post" asp-route-id="@p.Id">Czytaj dalej</a>
+                    <a class="btn btn-outline-warning mb-2" asp-action="Edit" asp-route-id="@p.Id">Edytuj</a>
+                    <button class="btn btn-outline-warning mb-2" data-toggle="modal" data-target="#ModalRemove">Usuń</button>
 
 
-                <div class="modal fade" id="ModalRemove" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Uwaga!</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Czy napewno chcesz usunąć ten wpis?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Anuluj</button>
-                                <a class="btn btn-outline-primary " asp-controller="Blog" asp-action="Remove" asp-route-id="@p.Id">Usuń</a>
+                    <div class="modal fade" id="ModalRemove" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Uwaga!</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Czy napewno chcesz usunąć ten wpis?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Anuluj</button>
+                                    <a class="btn btn-outline-primary " asp-controller="Blog" asp-action="Remove" asp-route-id="@p.Id">Usuń</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
         }
 
 

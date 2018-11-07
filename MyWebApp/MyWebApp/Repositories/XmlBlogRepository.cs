@@ -13,9 +13,7 @@ namespace MyWebApp.Repositories
 
         public XmlBlogRepository()
         {
-            PostList.Add(new Post { Title = "Flat button w xaml", ShortDescription="Krótki poradnik jak ostylować przycisk pod styl flat...", HtmlContent = "Jakiś kontent" });
-            PostList.Add(new Post { Title = "Flat button w xaml", ShortDescription = "Krótki poradnik jak ostylować przycisk pod styl flat...", HtmlContent = "Jakiś kontent" });
-            PostList.Add(new Post { Title = "Flat button w xaml", ShortDescription = "Krótki poradnik jak ostylować przycisk pod styl flat...", HtmlContent = "Jakiś kontent" });
+
 
         }
 
