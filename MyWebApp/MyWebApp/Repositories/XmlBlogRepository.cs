@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MyWebApp.Repositories
 {
@@ -13,7 +12,7 @@ namespace MyWebApp.Repositories
 
         public XmlBlogRepository()
         {
-
+       
 
         }
 
@@ -47,5 +46,8 @@ namespace MyWebApp.Repositories
         {
             PostList.RemoveAll(x => x.Id == id);
         }
+
+     
+
     }
 }
