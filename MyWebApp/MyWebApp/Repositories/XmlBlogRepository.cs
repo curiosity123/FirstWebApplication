@@ -12,14 +12,16 @@ namespace MyWebApp.Repositories
 
         public XmlBlogRepository()
         {
-
-
+            PostList = XmlDataBase<Post>.Load();
+            if (PostList == null)
+                PostList = new List<Post>();
         }
 
         public Post Create(Post post)
         {
             PostList.Add(post);
-            return PostList.FirstOrDefault(x=>x.Id == post.Id);
+            XmlDataBase<Post>.Save(PostList);
+            return PostList.FirstOrDefault(x => x.Id == post.Id);
         }
 
         public Post Edit(Post post)
@@ -29,6 +31,7 @@ namespace MyWebApp.Repositories
             editedPost.Category = post.Category;
             editedPost.ShortDescription = post.ShortDescription;
             editedPost.HtmlContent = post.HtmlContent;
+            XmlDataBase<Post>.Save(PostList);
             return editedPost;
         }
 
@@ -45,9 +48,10 @@ namespace MyWebApp.Repositories
         public void RemovePost(Guid id)
         {
             PostList.RemoveAll(x => x.Id == id);
+            XmlDataBase<Post>.Save(PostList);
         }
 
-     
+
 
     }
 }
