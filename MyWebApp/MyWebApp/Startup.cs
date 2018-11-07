@@ -21,7 +21,7 @@ namespace MyWebApp
         public void ConfigureServices(IServiceCollection services)
         {
            // Mapper.Initialize(cfg => { cfg.CreateMap<PostDTO, Post>(); });
-            services.AddSingleton<IBlogRepository, InMemoryBlogRepository>();
+            services.AddSingleton<IBlogRepository, XmlBlogRepository>();
             services.AddMvc();
 
 
