@@ -20,9 +20,11 @@ namespace MyWebApp.Repositories
 
         public static void Save(List<T> items)
         {
+
             XmlSerializer xs = new XmlSerializer(typeof(List<T>));
             TextWriter tw = new StreamWriter(typeof(T).Name + ".xml");
             xs.Serialize(tw, items);
+            tw.Close();
         }
     }
 }

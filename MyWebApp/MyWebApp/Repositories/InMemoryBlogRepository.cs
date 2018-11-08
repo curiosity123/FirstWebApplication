@@ -19,6 +19,11 @@ namespace MyWebApp.Repositories
 
         }
 
+        public void AddComment(Comment comment)
+        {
+            throw new NotImplementedException();
+        }
+
         public Post Create(Post post)
         {
             PostList.Add(post);
@@ -43,6 +48,11 @@ namespace MyWebApp.Repositories
         public List<Post> GetAll()
         {
             return PostList;
+        }
+
+        public void RemoveComment(Comment comment)
+        {
+            throw new NotImplementedException();
         }
 
         public void RemovePost(Guid id)

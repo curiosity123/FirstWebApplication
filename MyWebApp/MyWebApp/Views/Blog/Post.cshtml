@@ -1,13 +1,16 @@
 ﻿@{
     @using MyWebApp.Models
     @model Post
+
+    Comment cmt = new Comment();
+    cmt.PostId = this.Model.Id;
 }
 
 
 
 
 <div class="alert alert-success" role="alert">
-    <h1 class="container-fluid text-center "  style="word-wrap: break-word;">@Model.Title</h1>
+    <h1 class="container-fluid text-center " style="word-wrap: break-word;">@Model.Title</h1>
     <h6>Utworzono: @Model.Created</h6>
 </div>
 
@@ -17,7 +20,35 @@
     max-height: 100%; word-wrap: break-word;">@Html.Raw(Model.HtmlContent)</div>
 </div>
 
+@foreach (Comment c in Model.Comments)
+{
+<div class="alert  alert-secondary" role="alert">
+    <h6 class="container-fluid text-left " style="word-wrap: break-word;">@c.NickName pisze:</h6>
+    <h6 class="container-fluid text-left " style="word-wrap: break-word;">@c.Text</h6>
+    <a class="btn btn-outline-warning mb-2" asp-action="RemoveComment" asp-route-Comment="@c">Usuń</a>
+</div>
+}
+
+
+<form method="post" class="container" name="Comment">
+
+    <div>
+        <label>Nick</label>
+        <input class="form-control" asp-for="@cmt.NickName" value="@cmt.NickName"></>
+        @{ cmt.PostId = Model.Id;}
+        <label class="mt-3">Text</label>
+        <textarea class="form-control mb-2 " style="height: 100px" asp-for="@cmt.Text" value="@cmt.Text"></textarea>
+
+        <textarea hidden class="form-control mb-2 " style="height: 100px" asp-for="@cmt.PostId" value="@Model.Id"></textarea>
+    </div>
+    <div class="container text-center mt-3 mb-5">
+        <input class="btn btn-outline-success" type="submit" name="save" value="Dodaj komentarz" />
+    </div>
+</form>
+
+
 
 <div class="container text-center mt-4 mb-4">
     <a class="btn btn-outline-info mb-4" asp-action="PostList" asp-controller="Blog">Powrót do listy</a>
 </div>
+

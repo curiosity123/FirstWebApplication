@@ -33,6 +33,20 @@ namespace MyWebApp.Controllers
                 return View(model);
         }
 
+        [HttpPost]
+        public IActionResult Post(Comment cmt)
+        {
+            repository.AddComment(cmt);
+           return View(repository.Get(cmt.PostId));
+        }
+
+
+        public IActionResult RemoveComment(Comment comment)
+        {
+            repository.RemoveComment(comment);
+            return View("Post", comment.PostId);
+        }
+
 
         public IActionResult Create(Guid id)
         {
