@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MyWebApp.Models
@@ -15,6 +16,7 @@ namespace MyWebApp.Models
         public string Title { get; set; }
         public string ShortDescription { get; set; }
         public string HtmlContent { get; set; }
+        public List<Comment> Comments{get;set;}
 
 
         public Post()
@@ -24,6 +26,8 @@ namespace MyWebApp.Models
             Category = Category.Other;
             HtmlContent = "";
             Title = "";
+            Comments = new List<Comment>();
+            
         }
     }
 }

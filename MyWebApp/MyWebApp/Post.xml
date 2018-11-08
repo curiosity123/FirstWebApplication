@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfPost xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfPost xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Post>
+    <Id>d3b87d68-1005-4044-a69b-f0c2e6d1d2b2</Id>
+    <Category>Sport</Category>
+    <Created>2018-11-08T18:40:42.6962412+01:00</Created>
+    <Title>test</Title>
+    <ShortDescription>tetete</ShortDescription>
+    <HtmlContent>&lt;p&gt;etete&lt;/p&gt;</HtmlContent>
+    <Comments />
+  </Post>
+</ArrayOfPost>
