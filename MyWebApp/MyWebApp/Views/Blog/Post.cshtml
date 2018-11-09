@@ -25,7 +25,9 @@
 <div class="alert  alert-secondary" role="alert">
     <h6 class="container-fluid text-left " style="word-wrap: break-word;">@c.NickName pisze:</h6>
     <h6 class="container-fluid text-left " style="word-wrap: break-word;">@c.Text</h6>
-    <a class="btn btn-outline-warning mb-2" asp-action="RemoveComment" asp-route-Comment="@c">Usuń</a>
+    <form asp-controller="Blog" asp-action="RemoveComment" asp-route-Comment="@c" method="post">
+        <button asp-route-Comment="@c" type="submit" class="btn btn-primary">Yes - Delete this User</button>
+    </form>
 </div>
 }
 
