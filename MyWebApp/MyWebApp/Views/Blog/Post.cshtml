@@ -24,26 +24,23 @@
 <div class="alert  alert-secondary" role="alert">
     <h6 class="container-fluid text-left " style="word-wrap: break-word;">@c.NickName pisze:</h6>
     <h6 class="container-fluid text-left " style="word-wrap: break-word;">@c.Text</h6>
-    <form asp-controller="Blog" asp-action="RemoveComment" asp-route-CommentId="@c.Id" asp-route-PostId="@Model.Id" method="post">
+    <form asp-controller="Blog" asp-action="RemoveComment" asp-route-commentId="@c.Id" asp-route-postId="@Model.Id" method="post">
         <button  type="submit" class="btn btn-primary">Usuń</button>
     </form>
 </div>
 }
 
 
-<form method="post" class="container" name="Comment">
+<form method="post" class="container" name="Comment"  asp-action="AddComment" asp-route-comment="@cmt" asp-route-postId="@Model.Id">
 
     <div>
         <label>Nick</label>
         <input class="form-control"  value="@cmt.NickName"></>
-        @{ cmt.PostId = Model.Id;}
         <label class="mt-3">Text</label>
         <textarea class="form-control mb-2 " style="height: 100px" value="@cmt.Text"></textarea>
-
-        <textarea hidden class="form-control mb-2 " style="height: 100px" asp-for="@cmt.PostId" value="@Model.Id"></textarea>
     </div>
     <div class="container text-center mt-3 mb-5">
-        <input class="btn btn-outline-success" type="submit" name="save" value="Dodaj komentarz" />
+        <input class="btn btn-outline-success"  type="submit" name="save" value="Dodaj komentarz" />
     </div>
 </form>
 

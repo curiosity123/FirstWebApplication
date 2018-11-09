@@ -34,17 +34,19 @@ namespace MyWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Comment cmt)
+        public IActionResult AddComment(Comment comment, Guid postId)
         {
-            repository.AddComment(cmt);
-           return View(repository.Get(cmt.PostId));
+            repository.AddComment(comment, postId );
+           return View(repository.Get(postId));
         }
 
         [HttpPost]
-        public IActionResult RemoveComment(Guid CommentId, Guid PostId)
+        public IActionResult RemoveComment(Guid commentId, Guid postId)
         {
-          //  repository.RemoveComment(comment);
-            return View("PostList");
+            Post toRemove = repository.Get(postId);
+            if (toRemove != null)
+                repository.RemoveComment(commentId, postId);
+            return View("Post", repository.Get(postId));
         }
 
 

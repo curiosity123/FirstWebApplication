@@ -8,7 +8,6 @@ namespace MyWebApp.Models
     public class Comment
     {
         public Guid Id { get; set; }
-        public Guid PostId { get; set; }
         public string NickName { get; set; }
         public string Text { get; set; }
         public DateTime Created { get; set; }

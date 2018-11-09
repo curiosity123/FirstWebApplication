@@ -17,9 +17,9 @@ namespace MyWebApp.Repositories
                 PostList = new List<Post>();
         }
 
-        public void AddComment(Comment comment)
+        public void AddComment(Comment comment, Guid postId)
         {
-            var post = PostList.Where(x => x.Id == comment.PostId).FirstOrDefault();
+            var post = PostList.Where(x => x.Id == postId).FirstOrDefault();
             if (post != null)
                 post.Comments.Add(comment);
             XmlDataBase<Post>.Save(PostList);
@@ -53,11 +53,16 @@ namespace MyWebApp.Repositories
             return PostList;
         }
 
-        public void RemoveComment(Comment comment)
+        public void RemoveComment(Guid commentId,Guid postId)
         {
-            var post = PostList.Where(x => x.Id == comment.PostId).FirstOrDefault();
+            var post = PostList.Where(x => x.Id == postId).FirstOrDefault();
             if (post != null)
-                post.Comments.RemoveAll(x => x.Id == comment.Id);
+            {
+                var comment = post.Comments.Where(x => x.Id == commentId).FirstOrDefault();
+                post.Comments.Remove(comment);
+            }
+              
+
             XmlDataBase<Post>.Save(PostList);
         }
 

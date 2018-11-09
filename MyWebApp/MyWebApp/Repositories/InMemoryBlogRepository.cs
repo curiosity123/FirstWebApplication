@@ -19,7 +19,7 @@ namespace MyWebApp.Repositories
 
         }
 
-        public void AddComment(Comment comment)
+        public void AddComment(Comment comment, Guid postId)
         {
             throw new NotImplementedException();
         }
@@ -50,7 +50,7 @@ namespace MyWebApp.Repositories
             return PostList;
         }
 
-        public void RemoveComment(Comment comment)
+        public void RemoveComment(Guid commentId, Guid postId)
         {
             throw new NotImplementedException();
         }

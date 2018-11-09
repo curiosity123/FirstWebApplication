@@ -13,8 +13,8 @@ namespace MyWebApp.Repositories
         List<Post> GetAll();
         Post Get(Guid id);
         Post Edit(Post post);
-        void AddComment(Comment comment);
-        void RemoveComment(Comment comment);
+        void AddComment(Comment comment, Guid postId);
+        void RemoveComment(Guid commentId, Guid postId);
 
     }
 }
