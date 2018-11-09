@@ -9,6 +9,20 @@
     <HtmlContent>&lt;p&gt;etete&lt;/p&gt;</HtmlContent>
     <Comments>
       <Comment>
+        <Id>a6065526-930d-48e4-9a8f-32ca2c4b58f2</Id>
+        <PostId>00000000-0000-0000-0000-000000000000</PostId>
+        <NickName>Łukasz</NickName>
+        <Text>jakis komentarz</Text>
+        <Created>0001-01-01T00:00:00</Created>
+      </Comment>
+      <Comment>
+        <Id>3376942c-93fe-40fd-9953-2cae9b3676f1</Id>
+        <PostId>00000000-0000-0000-0000-000000000000</PostId>
+        <NickName>Łukasz</NickName>
+        <Text>jakis komentarz</Text>
+        <Created>0001-01-01T00:00:00</Created>
+      </Comment>
+      <Comment>
         <Id>db252aef-0858-4d5c-91de-997df6278166</Id>
         <PostId>00000000-0000-0000-0000-000000000000</PostId>
         <NickName>Łukasz</NickName>

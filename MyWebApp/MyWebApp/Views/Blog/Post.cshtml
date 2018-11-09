@@ -3,7 +3,6 @@
     @model Post
 
     Comment cmt = new Comment();
-    cmt.PostId = this.Model.Id;
 }
 
 
@@ -25,8 +24,8 @@
 <div class="alert  alert-secondary" role="alert">
     <h6 class="container-fluid text-left " style="word-wrap: break-word;">@c.NickName pisze:</h6>
     <h6 class="container-fluid text-left " style="word-wrap: break-word;">@c.Text</h6>
-    <form asp-controller="Blog" asp-action="RemoveComment" asp-route-Comment="@c" method="post">
-        <button asp-route-Comment="@c" type="submit" class="btn btn-primary">Yes - Delete this User</button>
+    <form asp-controller="Blog" asp-action="RemoveComment" asp-route-CommentId="@c.Id" asp-route-PostId="@Model.Id" method="post">
+        <button  type="submit" class="btn btn-primary">Usuń</button>
     </form>
 </div>
 }
@@ -36,10 +35,10 @@
 
     <div>
         <label>Nick</label>
-        <input class="form-control" asp-for="@cmt.NickName" value="@cmt.NickName"></>
+        <input class="form-control"  value="@cmt.NickName"></>
         @{ cmt.PostId = Model.Id;}
         <label class="mt-3">Text</label>
-        <textarea class="form-control mb-2 " style="height: 100px" asp-for="@cmt.Text" value="@cmt.Text"></textarea>
+        <textarea class="form-control mb-2 " style="height: 100px" value="@cmt.Text"></textarea>
 
         <textarea hidden class="form-control mb-2 " style="height: 100px" asp-for="@cmt.PostId" value="@Model.Id"></textarea>
     </div>

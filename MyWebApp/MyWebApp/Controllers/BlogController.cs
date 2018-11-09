@@ -21,7 +21,7 @@ namespace MyWebApp.Controllers
             return View(repository.GetAll());
         }
 
-
+        [HttpGet]
         public IActionResult Post(Guid id)
         {
             var model = repository.Get(id);
@@ -40,11 +40,11 @@ namespace MyWebApp.Controllers
            return View(repository.Get(cmt.PostId));
         }
 
-
-        public IActionResult RemoveComment(Comment comment)
+        [HttpPost]
+        public IActionResult RemoveComment(Guid CommentId, Guid PostId)
         {
-            repository.RemoveComment(comment);
-            return View("Post", comment.PostId);
+          //  repository.RemoveComment(comment);
+            return View("PostList");
         }
 
 
