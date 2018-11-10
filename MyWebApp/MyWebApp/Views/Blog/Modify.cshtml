@@ -6,7 +6,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
 
-<div class="container text-center bg-light mt-5 mb-5"><h1>@ViewBag.Title</h1></div>
+<div class="text-center mt-3 mb-5"><h1 class="font-weight-bold">@ViewBag.Title</h1></div>
 
 
 <form method="post" class="container">
@@ -26,8 +26,8 @@
     <textarea asp-for="HtmlContent" id="summernote"></textarea>
 
     <div class="container text-center mt-3 mb-5">
-        <a class="btn btn-outline-danger float-left " asp-action="PostList" asp-controller="Blog">Porzuć</a>
-        <input class="btn btn-outline-success" type="submit" name="save" value="@ViewBag.ButtonTitle" />
+        <a class="btn btn-danger float-left " asp-action="PostList" asp-controller="Blog">Porzuć</a>
+        <input class="btn btn-success" type="submit" name="save" value="@ViewBag.ButtonTitle" />
 
     </div>
 </form>

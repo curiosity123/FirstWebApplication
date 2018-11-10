@@ -5,21 +5,23 @@
 
 
 <div>
-    <div class="alert alert-dismissible" role="alert">
-        <div class="container text-center "><a class="h1">Mini blog :)</a></div>
-        <div class="container text-center  mt-2"><a class="h6">Tutaj poczytasz na tematy które mnie interesują i którymi chcę się podzielić z innymi</a></div>
+    <div>
+        <div class="container text-center mt-3"><a class="h1 font-weight-bold">Mini blog :)</a></div>
+        <div class="container text-center  mt-2 mb-3"><a class="h6  ">Tutaj poczytasz na tematy które mnie interesują i którymi chcę się podzielić z innymi</a></div>
 
 
     </div>
 
-    <div class="container-fluid">
+    <div class="container mt-3">
 
         @foreach (Post p in Model)
         {
-            <div class="alert alert-info" role="alert">
-                <div class="container text-center alert alert-heading" style=" text-align: justify; word-wrap: break-word;"><a asp-action="Post" asp-route-id="@p.Id" class="h1">@p.Title</a></div>
+            <div class="mt-3" style="border-radius: 25px 25px 0px 25px; background-image: linear-gradient(to right,#f5f7fa,#f5f7fa);">
+                <div class="container text-center " style=" text-align: justify; word-wrap: break-word;">
+                    <a asp-action="Post" asp-route-id="@p.Id" class="h1 font-weight-bold">@p.Title</a>
+                </div>
 
-                <div class="container  text-center  h5  alert alert-info" style=" word-wrap: break-word;">
+                <div class="container  text-center  h4 " style=" word-wrap: break-word;">
                     <a>@p.ShortDescription</a>
                 </div>
 
@@ -33,25 +35,25 @@
 
                 <div class="text-right ">
                     <a class="btn btn-primary mb-2" asp-action="Post" asp-route-id="@p.Id">Czytaj dalej</a>
-                    <a class="btn btn-outline-warning mb-2" asp-action="Edit" asp-route-id="@p.Id">Edytuj</a>
-                    <button class="btn btn-outline-warning mb-2" data-toggle="modal" data-target="#ModalRemove">Usuń</button>
+                    <a class="btn btn-primary mb-2" asp-action="Edit" asp-route-id="@p.Id">Edytuj</a>
+                    <button class="btn btn-danger mb-2 mr-2" data-toggle="modal" data-target="#ModalRemove">Usuń</button>
 
 
                     <div class="modal fade" id="ModalRemove" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
+                        <div class="modal-dialog modal-dialog-centered " role="document">
+                            <div class="modal-content" style="background-image: linear-gradient(to right,#fdfcfb ,#f5f7fa);">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLongTitle">Uwaga!</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
+                                        @*<span aria-hidden="true">&times;</span>*@
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     Czy napewno chcesz usunąć ten wpis?
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Anuluj</button>
-                                    <a class="btn btn-outline-primary " asp-controller="Blog" asp-action="Remove" asp-route-id="@p.Id">Usuń</a>
+                                    <button type="button" class="btn btn-success" data-dismiss="modal">Anuluj</button>
+                                    <a class="btn btn-danger " asp-controller="Blog" asp-action="Remove" asp-route-id="@p.Id">Usuń</a>
                                 </div>
                             </div>
                         </div>
@@ -69,5 +71,5 @@
 
 
     </div>
-    <div class="container text-center mt-3 mb-3"> <a class="btn btn-outline-success " asp-action="Create">Stwórz nowy post</a></div>
+    <div class="container text-center mt-3 mb-3"> <a class="btn btn-success " asp-action="Create">Stwórz nowy post</a></div>
 </div>
