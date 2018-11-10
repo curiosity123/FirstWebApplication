@@ -10,7 +10,7 @@ namespace MyWebApp.Controllers
         public IActionResult Index()
         {
             ViewBag.Title = "Łukasz Adach";
-            return View("Contact");
+            return View("About");
         }
 
 
