@@ -55,13 +55,10 @@ namespace MyWebApp.Repositories
 
         public void RemoveComment(Guid commentId,Guid postId)
         {
-            var post = PostList.Where(x => x.Id == postId).FirstOrDefault();
-            if (post != null)
-            {
-                var comment = post.Comments.Where(x => x.Id == commentId).FirstOrDefault();
-                post.Comments.Remove(comment);
-            }
-              
+                foreach (var p in PostList)
+                {if(p.Id == postId)
+                        p.Comments.RemoveAll(x => x.Id == commentId);
+                }
 
             XmlDataBase<Post>.Save(PostList);
         }

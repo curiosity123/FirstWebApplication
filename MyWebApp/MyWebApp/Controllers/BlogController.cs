@@ -36,8 +36,9 @@ namespace MyWebApp.Controllers
         [HttpPost]
         public IActionResult AddComment(Comment comment, Guid postId)
         {
+            
             repository.AddComment(comment, postId );
-           return View(repository.Get(postId));
+            return RedirectToAction("Post",repository.Get(postId));
         }
 
         [HttpPost]
@@ -46,7 +47,7 @@ namespace MyWebApp.Controllers
             Post toRemove = repository.Get(postId);
             if (toRemove != null)
                 repository.RemoveComment(commentId, postId);
-            return View("Post", repository.Get(postId));
+            return RedirectToAction("Post", repository.Get(postId));
         }
 
 

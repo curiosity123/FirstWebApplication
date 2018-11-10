@@ -16,6 +16,7 @@ namespace MyWebApp.Models
         public Comment()
         {
             Id = Guid.NewGuid();
+            Created = DateTime.Now;
         }
     }
 }
