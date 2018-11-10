@@ -17,7 +17,7 @@ namespace MyWebApp.EF
 
 
 
-        public DbSet<Post> Users { get; set; }
+        public DbSet<Post> Posts { get; set; }
 
 
     }

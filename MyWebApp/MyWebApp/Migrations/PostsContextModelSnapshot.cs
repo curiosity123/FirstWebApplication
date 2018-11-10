@@ -60,7 +60,7 @@ namespace MyWebApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Posts");
                 });
 
             modelBuilder.Entity("MyWebApp.Models.Comment", b =>

@@ -9,7 +9,7 @@ namespace MyWebApp.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "Posts",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -21,7 +21,7 @@ namespace MyWebApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_Posts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -38,9 +38,9 @@ namespace MyWebApp.Migrations
                 {
                     table.PrimaryKey("PK_Comment", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Comment_Users_PostId",
+                        name: "FK_Comment_Posts_PostId",
                         column: x => x.PostId,
-                        principalTable: "Users",
+                        principalTable: "Posts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -57,7 +57,7 @@ namespace MyWebApp.Migrations
                 name: "Comment");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Posts");
         }
     }
 }

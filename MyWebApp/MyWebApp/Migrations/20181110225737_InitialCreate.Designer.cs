@@ -12,7 +12,7 @@ using System;
 namespace MyWebApp.Migrations
 {
     [DbContext(typeof(PostsContext))]
-    [Migration("20181110222136_InitialCreate")]
+    [Migration("20181110225737_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,7 +61,7 @@ namespace MyWebApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Posts");
                 });
 
             modelBuilder.Entity("MyWebApp.Models.Comment", b =>

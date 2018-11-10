@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using MyWebApp.EF;
 using MyWebApp.Models;
 
@@ -15,7 +16,7 @@ namespace MyWebApp.Repositories
             dbContext = _context;
         }
 
-        public PostsContext dbContext { get; private set; }
+        PostsContext dbContext;
 
 
 
@@ -28,7 +29,10 @@ namespace MyWebApp.Repositories
 
         public Post Create(Post post)
         {
-            throw new NotImplementedException();
+
+            dbContext.Posts.Add(post);
+            dbContext.SaveChanges();
+            return null;
         }
 
         public Post Edit(Post post)
@@ -38,12 +42,14 @@ namespace MyWebApp.Repositories
 
         public Post Get(Guid id)
         {
-            throw new NotImplementedException();
+            var u = (from x in dbContext.Posts where x.Id == id select x).Include("Posts.Comments").FirstOrDefault();
+            return u;
         }
 
         public List<Post> GetAll()
         {
-            throw new NotImplementedException();
+            return dbContext.Posts.ToList();
+
         }
 
         public void RemoveComment(Guid commentId, Guid postId)

@@ -27,7 +27,6 @@ namespace MyWebApp.Models
             HtmlContent = "";
             Title = "";
             Comments = new List<Comment>();
-            Comments.Add(new Comment() { NickName = "Łukasz", Text = "jakis komentarz" });
         }
     }
 }

@@ -25,10 +25,10 @@ namespace MyWebApp
             var connection = @"Data Source=mssql4.webio.pl,2401\lukasz86radom_WebPageDb;Initial Catalog=lukasz86radom_WebPageDb;Integrated Security=False;User ID=lukasz86radom_lukasz86radom;Password=luk2739R.;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=true;";
             // Mapper.Initialize(cfg => { cfg.CreateMap<PostDTO, Post>(); });
             // services.AddSingleton<IBlogRepository, XmlBlogRepository>();
+
             services.AddDbContext<PostsContext>(options => options.UseSqlServer(connection));
+            services.AddScoped<IBlogRepository, MsSqlRepository>();
             services.AddMvc();
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
