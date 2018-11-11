@@ -9,3 +9,4 @@ C:\GitRepo\MyWebApp\MyWebApp\obj\Any CPU\Release\netcoreapp2.0\MyWebApp.Assembly
 C:\GitRepo\MyWebApp\MyWebApp\obj\Any CPU\Release\netcoreapp2.0\MyWebApp.AssemblyInfo.cs
 C:\GitRepo\MyWebApp\MyWebApp\obj\Any CPU\Release\netcoreapp2.0\MyWebApp.dll
 C:\GitRepo\MyWebApp\MyWebApp\obj\Any CPU\Release\netcoreapp2.0\MyWebApp.pdb
+C:\GitRepo\MyWebApp\MyWebApp\bin\Any CPU\Release\netcoreapp2.0\MyWebApp.dll.config

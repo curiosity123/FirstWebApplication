@@ -24,7 +24,13 @@ namespace MyWebApp.Repositories
 
         public void AddComment(Comment comment, Guid postId)
         {
-            throw new NotImplementedException();
+            var post = dbContext.Posts.Where(x => x.Id == postId).FirstOrDefault();
+            if (post != null)
+            {
+
+                post.Comments.Add(comment);
+                dbContext.SaveChanges();
+            }
         }
 
         public Post Create(Post post)
@@ -37,29 +43,47 @@ namespace MyWebApp.Repositories
 
         public Post Edit(Post post)
         {
-            throw new NotImplementedException();
+            var u = (from x in dbContext.Posts where x.Id == post.Id select x).Include("Comments").FirstOrDefault();
+            u.Title = post.Title;
+            u.ShortDescription = post.ShortDescription;
+            u.HtmlContent = post.HtmlContent;
+            u.Category = post.Category;
+            dbContext.SaveChanges();
+            return u;
         }
 
         public Post Get(Guid id)
         {
-            var u = (from x in dbContext.Posts where x.Id == id select x).Include("Posts.Comments").FirstOrDefault();
+            var u = (from x in dbContext.Posts where x.Id == id select x).Include("Comments").FirstOrDefault();
             return u;
         }
 
         public List<Post> GetAll()
         {
             return dbContext.Posts.ToList();
-
         }
 
         public void RemoveComment(Guid commentId, Guid postId)
         {
-            throw new NotImplementedException();
+            var post = dbContext.Posts.Where(x => x.Id == postId).FirstOrDefault();
+            if (post != null)
+            {
+                var c = post.Comments.Where(x => x.Id == commentId).FirstOrDefault();
+                if (c != null)
+                {
+                    post.Comments.Remove(c);
+                    dbContext.SaveChanges();
+                }
+            }
+
         }
 
         public void RemovePost(Guid id)
         {
-            throw new NotImplementedException();
+            var toRem = dbContext.Posts.Where(x => x.Id == id).FirstOrDefault();
+            if (toRem != null)
+                dbContext.Posts.Remove(toRem);
+            dbContext.SaveChanges();
         }
     }
 }
