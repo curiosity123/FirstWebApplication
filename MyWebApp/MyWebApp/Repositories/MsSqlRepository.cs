@@ -10,15 +10,12 @@ namespace MyWebApp.Repositories
 {
     public class MsSqlRepository : IBlogRepository
     {
+        PostsContext dbContext;
 
         public MsSqlRepository(PostsContext _context)
         {
             dbContext = _context;
         }
-
-        PostsContext dbContext;
-
-
 
 
 
@@ -72,18 +69,25 @@ namespace MyWebApp.Repositories
                 if (c != null)
                 {
                     post.Comments.Remove(c);
+                    dbContext.Comments.Remove(c);
                     dbContext.SaveChanges();
                 }
             }
-
         }
 
         public void RemovePost(Guid id)
         {
-            var toRem = dbContext.Posts.Where(x => x.Id == id).FirstOrDefault();
-            if (toRem != null)
-                dbContext.Posts.Remove(toRem);
-            dbContext.SaveChanges();
+
+            var post = dbContext.Posts.Where(x => x.Id == id).Include("Comments").FirstOrDefault();
+            if (post != null)
+            {
+                var comments = post.Comments;
+
+                dbContext.Posts.Remove(post);
+                dbContext.Comments.RemoveRange(comments);
+                dbContext.SaveChanges();
+            }
+
         }
     }
 }
