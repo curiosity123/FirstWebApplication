@@ -22,6 +22,7 @@ namespace MyWebApp
                 .UseStartup<Startup>()
                  .CaptureStartupErrors(true)
             .UseSetting("detailedErrors", "true")
+
                 .Build();
     }
 }

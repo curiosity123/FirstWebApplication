@@ -42,24 +42,5 @@ namespace MyWebApp.Controllers
         }
 
 
-        public IActionResult AdminForm()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult AdminForm(Credentials credentials)
-        {
-            if (credentials.Login == "admin" && credentials.Password=="password")
-            {
-                ViewBag.Title = "Witaj Łukasz";
-                return View("Index");
-            }
-            else
-            {
-                ViewBag.Error = "zły login lub hasło";
-                return View();
-            }
-        }
     }
 }

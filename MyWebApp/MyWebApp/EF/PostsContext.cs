@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MyWebApp.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyWebApp.EF
 {
-    public class PostsContext : DbContext
+    public class PostsContext : IdentityDbContext<AdminUser>
     {
 
         public PostsContext(DbContextOptions<PostsContext> options): base(options)

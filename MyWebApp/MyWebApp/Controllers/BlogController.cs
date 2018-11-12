@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyWebApp.Models;
 using MyWebApp.Repositories;
 using System;
@@ -15,7 +16,7 @@ namespace MyWebApp.Controllers
             repository = repo;
         }
 
-
+        [Authorize]
         public IActionResult PostList()
         {
             return View(repository.GetAll());
