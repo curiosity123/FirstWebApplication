@@ -40,7 +40,7 @@ namespace MyWebApp.Controllers
                 var result = await signInManager.PasswordSignInAsync(
                        credentials.Login,
                        credentials.Password,
-                       true,
+                       credentials.RememberMe,
                        false);
                 if (result.Succeeded)
                 {
@@ -55,7 +55,7 @@ namespace MyWebApp.Controllers
                 }
 
             }
-
+            ModelState.AddModelError(string.Empty, "Failed to login");
             return View();
         }
 

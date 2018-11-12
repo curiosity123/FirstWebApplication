@@ -28,7 +28,7 @@ namespace MyWebApp.Controllers
             return View();
         }
 
-        public IActionResult Dev()
+        public IActionResult Proj()
         {
             return View();
         }

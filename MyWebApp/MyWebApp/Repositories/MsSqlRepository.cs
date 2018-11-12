@@ -45,6 +45,8 @@ namespace MyWebApp.Repositories
             u.ShortDescription = post.ShortDescription;
             u.HtmlContent = post.HtmlContent;
             u.Category = post.Category;
+            u.IsProject = post.IsProject;
+            u.IsPublished = post.IsPublished;
             dbContext.SaveChanges();
             return u;
         }

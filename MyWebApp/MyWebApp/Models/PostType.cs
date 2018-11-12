@@ -5,6 +5,8 @@
         Programming,
         Sport,
         Music,
+        Electronic,
+        Productivity,
         Other
     }
 }

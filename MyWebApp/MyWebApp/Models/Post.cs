@@ -17,6 +17,8 @@ namespace MyWebApp.Models
         public string ShortDescription { get; set; }
         public string HtmlContent { get; set; }
         public List<Comment> Comments{get;set;}
+        public bool IsProject { get; set; }
+        public bool IsPublished { get; set; }
 
 
         public Post()

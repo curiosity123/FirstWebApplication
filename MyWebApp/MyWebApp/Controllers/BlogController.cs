@@ -37,9 +37,9 @@ namespace MyWebApp.Controllers
         [HttpPost]
         public IActionResult AddComment(Comment comment, Guid postId)
         {
-            
-            repository.AddComment(comment, postId );
-            return View("Post",repository.Get(postId));
+
+            repository.AddComment(comment, postId);
+            return View("Post", repository.Get(postId));
         }
 
         [HttpPost]
@@ -51,7 +51,7 @@ namespace MyWebApp.Controllers
                 repository.RemoveComment(commentId, postId);
 
             var post = repository.Get(postId);
-            return View("Post",post);
+            return View("Post", post);
         }
 
         [Authorize]
@@ -71,8 +71,10 @@ namespace MyWebApp.Controllers
             if (ModelState.IsValid)
             {
                 // Post newPost = Mapper.Map<Post>(post);
-
-                return RedirectToAction("PostList", repository.Create(post));
+                if (post.IsProject)
+                    return RedirectToAction("ProjectsList", repository.Create(post));
+                else
+                    return RedirectToAction("PostList", repository.Create(post));
             }
             else
                 return View("Modify");
