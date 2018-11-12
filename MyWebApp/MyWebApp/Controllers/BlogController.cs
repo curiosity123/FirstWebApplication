@@ -16,7 +16,7 @@ namespace MyWebApp.Controllers
             repository = repo;
         }
 
-        [Authorize]
+
         public IActionResult PostList()
         {
             return View(repository.GetAll());
@@ -43,6 +43,7 @@ namespace MyWebApp.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult RemoveComment(Guid commentId, Guid postId)
         {
             Post toRemove = repository.Get(postId);
@@ -53,7 +54,7 @@ namespace MyWebApp.Controllers
             return View("Post",post);
         }
 
-
+        [Authorize]
         public IActionResult Create(Guid id)
         {
             ViewBag.Title = "Create new post";
@@ -62,6 +63,7 @@ namespace MyWebApp.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Post post)
         {
@@ -76,7 +78,7 @@ namespace MyWebApp.Controllers
                 return View("Modify");
         }
 
-
+        [Authorize]
         public IActionResult Edit(Guid id)
         {
             ViewBag.Title = "Edit your post";
@@ -84,7 +86,7 @@ namespace MyWebApp.Controllers
             return View("Modify", repository.Get(id));
         }
 
-
+        [Authorize]
         public IActionResult Remove(Guid id)
         {
             repository.RemovePost(id);
@@ -93,6 +95,7 @@ namespace MyWebApp.Controllers
 
 
         [HttpPost]
+        [Authorize]
         public IActionResult Edit(Post post)
         {
             repository.Edit(post);

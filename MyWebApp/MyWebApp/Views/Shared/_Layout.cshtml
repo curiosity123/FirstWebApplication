@@ -48,7 +48,14 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="btn btn-outline-info" asp-controller="Account" asp-action="Login"><span class="glyphicon glyphicon-log-in"></span>Panel admina</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="btn btn-outline-info" asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-in"></span>Wyloguj</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="btn btn-outline-info" asp-controller="Account" asp-action="Login"><span class="glyphicon glyphicon-log-in"></span>Panel admina</a></li>
+                    }
                 </ul>
             </div>
         </nav>
@@ -62,8 +69,8 @@
 
 
     @*<footer class="container-fluid  text-center bg-dark mt-4">
-        <a class="text-center text-muted">Copyright 2018 Łukasz Adach</a>
-    </footer>*@
+            <a class="text-center text-muted">Copyright 2018 Łukasz Adach</a>
+        </footer>*@
 
 </body>
 

@@ -31,12 +31,14 @@
                 <div style="padding-top:15px; padding-bottom:5px">
                     <h6 class="text-left text-secondary" style="word-wrap: break-word;">@c.NickName pisze:</h6>
                 </div>
-                <div>
-                    <h6 class="text-left " style="word-wrap: break-word;">@c.Text</h6>
+                <div style=" padding-bottom:15px">
+                    <h6 class="text-left mb-3 " style="word-wrap: break-word;">@c.Text</h6>
                 </div>
-                <form class="form-group text-right" asp-controller="Blog" asp-action="RemoveComment" asp-route-commentId="@c.Id" asp-route-postId="@Model.Id" method="post">
-                    <button type="submit" class="btn btn-danger mb-3 text-right" >Usuń</button>
-                </form>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <form class="form-group text-right" asp-controller="Blog" asp-action="RemoveComment" asp-route-commentId="@c.Id" asp-route-postId="@Model.Id" method="post">
+                        <button type="submit" class="btn btn-danger mb-3 text-right">Usuń</button>
+                    </form>}
             </div>
         }
     </div>

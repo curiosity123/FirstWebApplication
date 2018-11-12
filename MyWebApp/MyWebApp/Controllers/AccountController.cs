@@ -35,7 +35,7 @@ namespace MyWebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(Credentials credentials)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var result = await signInManager.PasswordSignInAsync(
                        credentials.Login,
@@ -55,8 +55,17 @@ namespace MyWebApp.Controllers
                 }
 
             }
-           
+
             return View();
+        }
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
