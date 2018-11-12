@@ -6,8 +6,6 @@ namespace MyWebApp.Repositories
 {
     public interface IBlogRepository
     {
-
-
         Post Create(Post post);
         void RemovePost(Guid id);
         List<Post> GetAll();
@@ -15,6 +13,5 @@ namespace MyWebApp.Repositories
         Post Edit(Post post);
         void AddComment(Comment comment, Guid postId);
         void RemoveComment(Guid commentId, Guid postId);
-
     }
 }

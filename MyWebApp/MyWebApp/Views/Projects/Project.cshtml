@@ -27,7 +27,7 @@
     <div class="mt-3">
         @foreach (Comment c in Model.Comments)
         {
-            <div class="container text-left bg-light mt-2 mb-2" style="border-radius: 25px 25px 0px 25px;">
+            <div class="container text-left bg-light mt-2 mb-2"  style="border-radius: 25px 25px 0px 25px;">
                 <div style="padding-top:15px; padding-bottom:5px">
                     <h6 class="text-left text-secondary" style="word-wrap: break-word;">@c.NickName pisze:</h6>
                 </div>
@@ -39,7 +39,7 @@
     </div>
 
 
-    <form method="post" class="container bg-transparent " style="border-radius: 25px 25px 25px 0px;  " asp-controller="Projects" asp-action="AddComment" asp-route-comment="@comment" asp-route-postId="@this.Model.Id">
+    <form method="post" class="container bg-transparent "  asp-controller="Projects" asp-action="AddComment" asp-route-comment="@comment" asp-route-postId="@this.Model.Id">
 
         <label class="text-dark font-weight-bold mt-2" for="Autor">Dodaj komentarz</label>
         <div class="form-group">
