@@ -8,9 +8,10 @@ C:\GitRepo\MyWebApp\MyWebApp
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Blog\PostList.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\About.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\Contact.cshtml
---file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\Dev.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\Error.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Home\Index.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Projects\Project.cshtml
+--file=C:\GitRepo\MyWebApp\MyWebApp\Views\Projects\ProjectsList.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\Shared\_Layout.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\_ViewImports.cshtml
 --file=C:\GitRepo\MyWebApp\MyWebApp\Views\_ViewStart.cshtml
