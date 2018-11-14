@@ -39,7 +39,7 @@ namespace MyWebApp.Controllers
         {
 
             repository.AddComment(comment, postId);
-            return View("Post", repository.Get(postId));
+            return RedirectToAction(nameof(Post), repository.Get(postId));
         }
 
         [HttpPost]
@@ -51,7 +51,7 @@ namespace MyWebApp.Controllers
                 repository.RemoveComment(commentId, postId);
 
             var post = repository.Get(postId);
-            return View("Post", post);
+            return RedirectToAction(nameof(Post), post);
         }
 
         [Authorize]
