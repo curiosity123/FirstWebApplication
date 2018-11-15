@@ -2,12 +2,12 @@
 {
     public enum Category
     {
-        All,
-        Programming,
+        Wszystkie,
+        Programowanie,
         Sport,
-        Music,
-        Electronic,
-        Productivity,
-        Other
+        Muzyka,
+        Elektronika,
+        Produktywność,
+        Pozostałe
     }
 }

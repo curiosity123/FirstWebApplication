@@ -25,7 +25,7 @@ namespace MyWebApp.Models
         {
             Id = Guid.NewGuid();
             Created = DateTime.Now;
-            Category = Category.Other;
+            Category = Category.Wszystkie;
             HtmlContent = "";
             Title = "";
             Comments = new List<Comment>();

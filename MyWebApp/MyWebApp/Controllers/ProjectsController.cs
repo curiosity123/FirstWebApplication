@@ -42,6 +42,11 @@ namespace MyWebApp.Controllers
                 return View(model);
         }
 
+        [HttpPost]
+        public IActionResult Filter(Category category)
+        {
+            return RedirectToAction("ProjectsList", new { category = category });
+        }
 
 
         [HttpPost]

@@ -100,7 +100,7 @@ namespace MyWebApp.Controllers
         public IActionResult Remove(Guid id)
         {
             repository.RemovePost(id);
-            return View("PostList", repository.GetAll(Category.All));
+            return View("PostList", repository.GetAll(Category.Wszystkie));
         }
 
 
@@ -109,7 +109,7 @@ namespace MyWebApp.Controllers
         public IActionResult Edit(Post post)
         {
             repository.Edit(post);
-            return RedirectToAction("PostList", repository.GetAll(Category.All));
+            return RedirectToAction("PostList", repository.GetAll(Category.Wszystkie));
         }
     }
 }

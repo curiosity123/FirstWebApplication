@@ -1,7 +1,7 @@
 ﻿@{
     @using MyWebApp.Models
 @model List<Post>
-Category category = Category.Productivity;
+Category category = Category.Wszystkie;
 }
 
 
@@ -16,7 +16,7 @@ Category category = Category.Productivity;
 
 
 
-    <form method="post" class="container bg-transparent " style="border-radius: 25px 25px 25px 0px;  " asp-controller="Blog" asp-action="Filter" asp-route-category="@category">
+    <form method="post" class="container bg-transparent  text-center" style="border-radius: 25px 25px 25px 0px;  " asp-controller="Blog" asp-action="Filter" asp-route-category="@category">
 
         <label class="text-dark font-weight-bold mt-2" >Wybierz kategorię</label>
         <select asp-for="@category" asp-items="Html.GetEnumSelectList<Category>()"></select>

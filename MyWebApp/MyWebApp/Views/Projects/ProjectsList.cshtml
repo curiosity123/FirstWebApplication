@@ -1,6 +1,8 @@
-﻿@using MyWebApp.Models
-@model List<Post>
-
+﻿@{
+    @using MyWebApp.Models
+    @model List<Post>
+Category category = Category.Wszystkie;
+}
 
 
 
@@ -8,10 +10,18 @@
     <div>
         <div class="container text-center mt-3"><a class="h1 font-weight-bold">Moje projekty</a></div>
         <div class="container text-center  mt-2 mb-3"><a class="h6  ">Tutaj znajdziesz wpisy dotyczące moich projektów</a></div>
-       
+
 
     </div>
 
+    <form method="post" class="container bg-transparent text-center" style="border-radius: 25px 25px 25px 0px;  " asp-controller="Projects" asp-action="Filter" asp-route-category="@category">
+
+        <label class="text-dark font-weight-bold mt-2">Wybierz kategorię</label>
+        <select asp-for="@category" asp-items="Html.GetEnumSelectList<Category>()" ></select>
+
+
+        <input class="btn btn-success mb-3" type="submit" name="save" value="Filtruj" />
+    </form>
     <div class="container mt-3">
 
         @foreach (Post p in Model)
