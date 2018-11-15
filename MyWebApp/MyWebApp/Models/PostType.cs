@@ -2,6 +2,7 @@
 {
     public enum Category
     {
+        All,
         Programming,
         Sport,
         Music,

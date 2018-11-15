@@ -57,9 +57,12 @@ namespace MyWebApp.Repositories
             return u;
         }
 
-        public List<Post> GetAll()
+        public List<Post> GetAll(Category category)
         {
-            return dbContext.Posts.ToList();
+            if (category != 0)
+                return dbContext.Posts.ToList().Where(x => x.Category == category).ToList();
+            else
+                return dbContext.Posts.ToList();
         }
 
         public void RemoveComment(Guid commentId, Guid postId)

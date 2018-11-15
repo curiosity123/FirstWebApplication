@@ -17,9 +17,9 @@ namespace MyWebApp.Controllers
         }
 
 
-        public IActionResult PostList()
+        public IActionResult PostList(Category category=0)
         {
-            return View(repository.GetAll());
+            return View(repository.GetAll(category));
         }
 
         [HttpGet]
@@ -39,8 +39,16 @@ namespace MyWebApp.Controllers
         {
 
             repository.AddComment(comment, postId);
-            return RedirectToAction(nameof(Post), repository.Get(postId));
+            return RedirectToAction(nameof(Post));
         }
+
+        [HttpPost]
+        public IActionResult Filter(Category category)
+        {
+            return RedirectToAction("PostList", new { category = category });
+        }
+
+
 
         [HttpPost]
         [Authorize]
@@ -92,7 +100,7 @@ namespace MyWebApp.Controllers
         public IActionResult Remove(Guid id)
         {
             repository.RemovePost(id);
-            return View("PostList", repository.GetAll());
+            return View("PostList", repository.GetAll(Category.All));
         }
 
 
@@ -101,7 +109,7 @@ namespace MyWebApp.Controllers
         public IActionResult Edit(Post post)
         {
             repository.Edit(post);
-            return RedirectToAction("PostList", repository.GetAll());
+            return RedirectToAction("PostList", repository.GetAll(Category.All));
         }
     }
 }

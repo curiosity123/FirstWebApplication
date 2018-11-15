@@ -8,7 +8,7 @@ namespace MyWebApp.Repositories
     {
         Post Create(Post post);
         void RemovePost(Guid id);
-        List<Post> GetAll();
+        List<Post> GetAll(Category category);
         Post Get(Guid id);
         Post Edit(Post post);
         void AddComment(Comment comment, Guid postId);

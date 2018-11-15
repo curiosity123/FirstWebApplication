@@ -24,9 +24,9 @@ namespace MyWebApp.Controllers
 
 
 
-        public IActionResult ProjectsList()
+        public IActionResult ProjectsList(Category category = 0)
         {
-            return View(repository.GetAll());
+            return View(repository.GetAll(category));
         }
 
 

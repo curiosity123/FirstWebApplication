@@ -50,6 +50,11 @@ namespace MyWebApp.Repositories
             return PostList;
         }
 
+        public List<Post> GetAll(Category category)
+        {
+            throw new NotImplementedException();
+        }
+
         public void RemoveComment(Guid commentId, Guid postId)
         {
             throw new NotImplementedException();
