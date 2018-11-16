@@ -15,12 +15,8 @@ Category category = Category.Wszystkie;
     </div>
 
     <form method="post" class="container bg-transparent text-center" style="border-radius: 25px 25px 25px 0px;  " asp-controller="Projects" asp-action="Filter" asp-route-category="@category">
-
         <label class="text-dark font-weight-bold mt-2">Wybierz kategorię</label>
-        <select asp-for="@category" asp-items="Html.GetEnumSelectList<Category>()" ></select>
-
-
-        <input class="btn btn-success mb-3" type="submit" name="save" value="Filtruj" />
+        <select asp-for="@category" asp-items="Html.GetEnumSelectList<Category>()" onchange="this.form.submit()"></select>
     </form>
     <div class="container mt-3">
 
