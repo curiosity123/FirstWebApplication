@@ -39,7 +39,7 @@ namespace MyWebApp.Controllers
         {
 
             repository.AddComment(comment, postId);
-            return RedirectToAction(nameof(Post));
+            return RedirectToAction(nameof(Post),repository.Get(postId));
         }
 
         [HttpPost]
