@@ -80,7 +80,7 @@ namespace MyWebApp.Controllers
             {
                 // Post newPost = Mapper.Map<Post>(post);
                 if (post.IsProject)
-                    return RedirectToAction("ProjectsList", repository.Create(post));
+                    return RedirectToAction("ProjectsList","Projects", repository.Create(post));
                 else
                     return RedirectToAction("PostList", repository.Create(post));
             }
