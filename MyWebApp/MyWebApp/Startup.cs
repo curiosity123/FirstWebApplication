@@ -28,8 +28,7 @@ namespace MyWebApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration["ConnectionString"];// @"Data Source=mssql4.webio.pl,2401\lukasz86radom_WebPageDb;Initial Catalog=lukasz86radom_WebPageDb;Integrated Security=False;User ID=lukasz86radom_lukasz86radom;Password=luk2739R.;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=true;";
-            // Mapper.Initialize(cfg => { cfg.CreateMap<PostDTO, Post>(); });
+            var connectionString = Configuration["ConnectionString"];            // Mapper.Initialize(cfg => { cfg.CreateMap<PostDTO, Post>(); });
             // services.AddSingleton<IBlogRepository, XmlBlogRepository>();
 
             
