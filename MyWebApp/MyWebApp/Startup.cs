@@ -28,7 +28,8 @@ namespace MyWebApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration["ConnectionString"];            // Mapper.Initialize(cfg => { cfg.CreateMap<PostDTO, Post>(); });
+            var connectionString = Configuration["ConnectionString"];            
+            // Mapper.Initialize(cfg => { cfg.CreateMap<PostDTO, Post>(); });
             // services.AddSingleton<IBlogRepository, XmlBlogRepository>();
 
             
@@ -52,7 +53,7 @@ namespace MyWebApp
         }
         public IConfiguration Configuration { get; }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider provider, IConfiguration cfg)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider provider)
         {
 
 

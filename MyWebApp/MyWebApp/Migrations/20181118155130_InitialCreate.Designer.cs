@@ -12,7 +12,7 @@ using System;
 namespace MyWebApp.Migrations
 {
     [DbContext(typeof(PostsContext))]
-    [Migration("20181112103820_InitialCreate")]
+    [Migration("20181118155130_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -145,9 +145,11 @@ namespace MyWebApp.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("FirstName")
+                        .IsRequired();
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("LastName")
+                        .IsRequired();
 
                     b.Property<bool>("LockoutEnabled");
 
@@ -215,6 +217,10 @@ namespace MyWebApp.Migrations
                     b.Property<DateTime>("Created");
 
                     b.Property<string>("HtmlContent");
+
+                    b.Property<bool>("IsProject");
+
+                    b.Property<bool>("IsPublished");
 
                     b.Property<string>("ShortDescription");
 
