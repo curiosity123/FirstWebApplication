@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using MyWebApp.EF;
@@ -27,13 +28,13 @@ namespace MyWebApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = @"Data Source=mssql4.webio.pl,2401\lukasz86radom_WebPageDb;Initial Catalog=lukasz86radom_WebPageDb;Integrated Security=False;User ID=lukasz86radom_lukasz86radom;Password=luk2739R.;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=true;";
+            var connectionString = Configuration["ConnectionString"];// @"Data Source=mssql4.webio.pl,2401\lukasz86radom_WebPageDb;Initial Catalog=lukasz86radom_WebPageDb;Integrated Security=False;User ID=lukasz86radom_lukasz86radom;Password=luk2739R.;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=true;";
             // Mapper.Initialize(cfg => { cfg.CreateMap<PostDTO, Post>(); });
             // services.AddSingleton<IBlogRepository, XmlBlogRepository>();
 
+            
 
-
-            services.AddDbContext<PostsContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<PostsContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped<IBlogRepository, MsSqlRepository>();
 
             services.AddIdentity<AdminUser, IdentityRole>()
@@ -46,8 +47,13 @@ namespace MyWebApp
             services.AddMvc();
         }
 
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+        public IConfiguration Configuration { get; }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider provider)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider provider, IConfiguration cfg)
         {
 
 
@@ -65,11 +71,7 @@ namespace MyWebApp
             app.UseMvc(ConfigureRoutes);
 
             CreateRoles(provider).Wait();
-            //app.Run(async (context) =>
-            //{
-            //    context.Response.ContentType="text/plain";
-            //    await context.Response.WriteAsync("Not Fount :( ");
-            //});
+
         }
 
 
@@ -99,7 +101,7 @@ namespace MyWebApp
         }
 
         // find the user with the admin email 
-        var _user = await UserManager.FindByEmailAsync("admin@email.com");
+        var _user = await UserManager.FindByEmailAsync(Configuration["Email"]);
 
         // check if the user exists
         if (_user == null)
@@ -107,10 +109,10 @@ namespace MyWebApp
             //Here you could create the super admin who will maintain the web app
             var poweruser = new AdminUser
             {
-                UserName = "Admin",
-                Email = "admin@email.com",
+                UserName = Configuration["Admin"],
+                Email = Configuration["Email"],
             };
-            string adminPassword = "P@$$w0rd";
+            string adminPassword = Configuration["Password"];
 
             var createPowerUser = await UserManager.CreateAsync(poweruser, adminPassword);
             if (createPowerUser.Succeeded)
