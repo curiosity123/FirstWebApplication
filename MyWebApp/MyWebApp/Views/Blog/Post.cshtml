@@ -8,36 +8,36 @@
 
 
 <div class="container mt-3">
-    <h1 class="text-center font-weight-bold" style="word-wrap: break-word;">@Model.Title</h1>
-    <h6 class="text-dark text-center">Utworzono: @Model.Created</h6>
+    <h1 class="text-center font-weight-light" style="word-wrap: break-word;">@Model.Title</h1>
+    <h6 class="text-success  font-weight-light text-center">Utworzono: @Model.Created</h6>
 </div>
 
 <div class="container">
 
-    <div class="container   mt-4" style="background-color: rgba(255,255,255,0.55);">
+    <div class="container  font-weight-light  mt-4" >
         <div style="padding-top:15px; padding-bottom:5px">
             <div style="text-align: justify; max-width: 100%; max-height: 100%; word-wrap: break-word;">
                 @Html.Raw(Model.HtmlContent)
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <label class="text-dark font-weight-bold mt-4 " for="Autor">Wasze komentarze</label>
+    <div class="form-group container">
+        <label class="font-weight-light mt-4 " for="Autor">Wasze komentarze</label>
     </div>
-    <div class="mt-3">
+    <div class="mt-3 ">
         @foreach (Comment c in Model.Comments)
         {
-            <div class="container text-left   mt-2 mb-2" style="border-radius: 25px 25px 0px 25px; background-color: rgba(255,255,255,0.4);">
+            <div class="form-group container text-left   mt-2 mb-2" style="border-radius: 25px 25px 0px 25px; background-color: #222838;">
                 <div style="padding-top:15px; padding-bottom:5px">
-                    <h6 class="text-left text-secondary" style="word-wrap: break-word;">@c.NickName pisze:</h6>
+                    <h6 class="text-left font-weight-light" style="word-wrap: break-word;">@c.NickName pisze:</h6>
                 </div>
                 <div style=" padding-bottom:15px">
-                    <h6 class="text-left mb-3 " style="word-wrap: break-word;">@c.Text</h6>
+                    <h6 class="text-left mb-3 font-weight-light " style="word-wrap: break-word;">@c.Text</h6>
                 </div>
                 @if (User.Identity.IsAuthenticated)
                 {
                     <form class="form-group text-right" asp-controller="Blog" asp-action="RemoveComment" asp-route-commentId="@c.Id" asp-route-postId="@Model.Id" method="post">
-                        <button type="submit" class="btn btn-danger mb-3 text-right">Usuń</button>
+                        <button type="submit" class="btn font-weight-light btn-outline-danger mb-3 text-right">Usuń</button>
                     </form>}
             </div>
         }
@@ -46,18 +46,18 @@
 
     <form method="post" class="container bg-transparent " style="border-radius: 25px 25px 25px 0px;  " asp-controller="Blog" asp-action="AddComment" asp-route-comment="@comment" asp-route-postId="@this.Model.Id">
 
-        <label class="text-dark font-weight-bold mt-2" for="Autor">Dodaj komentarz</label>
-        <div class="form-group">
-            <label class="text-dark" for="Autor">Autor</label>
+        <label class=" font-weight-light mt-2" for="Autor">Dodaj komentarz</label>
+        <div class="form-group  font-weight-light">
+            <label  for="Autor" >Autor</label>
             <input class="form-control" id="Autor" placeholder="Autor" asp-for="@comment.NickName" value="@comment.NickName"></>
         </div>
 
-        <div class="form-group">
-            <label class="text-dark" for="comment">Komentarz</label>
+        <div class="form-group  font-weight-light">
+            <label for="comment">Komentarz</label>
             <textarea class="form-control" placeholder="Wpisz swój komentarz" id="comment" style="height: 100px" asp-for="@comment.Text" value="@comment.Text"></textarea>
         </div>
 
-        <input class="btn btn-success mb-3" type="submit" name="save" value="Dodaj" />
+        <input class="btn btn-outline-success mb-3  font-weight-light" type="submit" name="save" value="Dodaj" />
     </form>
 
 
@@ -66,7 +66,7 @@
 
 
     <div class="container text-center mt-2 mb-2">
-        <a class="btn btn-info mb-4" asp-action="PostList" asp-controller="Blog">Powrót do listy</a>
+        <a class="btn btn-outline-info mb-4  font-weight-light" asp-action="PostList" asp-controller="Blog">Powrót do listy</a>
     </div>
 
 </div>

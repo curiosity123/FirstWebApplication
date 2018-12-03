@@ -24,37 +24,39 @@
 </head>
 
 
-<body style="background-image: linear-gradient(to right,#076585,#fff);">
+<body style="background-color: #121622; color: #a6adbe;" class="font-weight-light">
     <header>
-        <nav class="navbar navbar-dark bg-dark navbar-expand-md">
-            <h1 class="navbar-brand">Łukasz Adach</h1>
+        <nav class="navbar navbar-dark navbar-expand-md" style="background-color: #222838; ">
+            <div class="navbar-brand font-weight-light text-center mt-2 " style="color: #a6adbe; ">
+                <h2 class="align-bottom font-weight-light mr-4 ">Łukasz Adach  </h2>
+            </div>
             <button class="navbar-toggler" type="submit" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div id="menu" class="collapse navbar-collapse navbar-bottom">
                 <ul class="navbar-nav mr-auto navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Blog" asp-action="PostList">Blog</a>
+                    <li class="nav-item" >
+                        <a class="nav-link " asp-controller="Blog" asp-action="PostList">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " asp-controller="Projects" asp-action="ProjectsList">Moje projekty</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="About">O mnie</a>
+                        <a class="nav-link " asp-controller="Home" asp-action="About">O mnie</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Contact">Kontakt</a>
+                        <a class="nav-link " asp-controller="Home" asp-action="Contact">Kontakt</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a class="btn btn-outline-info" asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-in"></span>Wyloguj</a></li>
+                        <li><a class="btn btn-outline-info font-weight-light" asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-in"></span>Wyloguj</a></li>
                     }
                     else
                     {
-                        <li><a class="btn btn-outline-info" asp-controller="Account" asp-action="Login"><span class="glyphicon glyphicon-log-in"></span>Panel admina</a></li>
+                        <li><a class="btn btn-outline-info font-weight-light" asp-controller="Account" asp-action="Login"><span class="glyphicon glyphicon-log-in"></span>Panel admina</a></li>
                     }
                 </ul>
             </div>
