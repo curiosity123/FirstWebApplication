@@ -5,14 +5,48 @@
 
 
 
-
 <!DOCTYPE html>
 
-@*<style>
-        header{
-            background-color:gray
-        }
-    </style>*@
+<style>
+    header {
+        background-color: gray
+    }
+
+    .navbar {
+        background: #222222;
+    }
+
+    .nav-item::after {
+        content: '';
+        display: block;
+        width: 0px;
+        height: 2px;
+        background: #fec400;
+        transition: 0.2s;
+    }
+
+    .nav-item:hover::after {
+        width: 100%;
+    }
+
+    .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+        color: #fec400;
+    }
+
+    .nav-link {
+        padding: 15px 5px;
+        transition: 0.2s;
+    }
+
+    .dropdown-item.active, .dropdown-item:active {
+        color: #212529;
+    }
+
+    .dropdown-item:focus, .dropdown-item:hover {
+        background: #fec400;
+    }
+
+</style>
 
 <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -36,17 +70,17 @@
 
             <div id="menu" class="collapse navbar-collapse navbar-bottom">
                 <ul class="navbar-nav mr-auto navbar-right">
-                    <li class="nav-item" >
+                    <li class="nav-item ">
                         <a class="nav-link " asp-controller="Blog" asp-action="PostList">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " asp-controller="Projects" asp-action="ProjectsList">Moje projekty</a>
+                        <a class="nav-link " asp-controller="Projects" asp-action="ProjectsList">Projekty</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " asp-controller="Home" asp-action="About">O mnie</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link " asp-controller="Home" asp-action="Contact">Kontakt</a>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link" asp-controller="Home" asp-action="Contact">Kontakt</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

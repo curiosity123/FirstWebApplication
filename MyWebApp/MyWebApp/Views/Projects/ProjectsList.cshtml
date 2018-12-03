@@ -4,7 +4,12 @@
 Category category = Category.Wszystkie;
 }
 
-
+<style>
+    a:hover {
+        color: #007BFF;
+        text-decoration: none
+    }
+</style>
 
 <div>
     <div>
@@ -27,7 +32,7 @@ Category category = Category.Wszystkie;
                 <div class="mt-4" style="background-color: #222838; border-radius:10px;">
                     <div>
                         <div class="container text-center " style=" text-align: justify; word-wrap: break-word;padding-top:15px">
-                            <a asp-action="Project" asp-route-id="@p.Id" class="h2 font-weight-light ">@p.Title</a>
+                            <a asp-action="Project" asp-route-id="@p.Id" class="h2 font-weight-light " style=" ">@p.Title</a>
                         </div>
 
                         <div class="container  text-center  h-75  font-weight-light  " style=" word-wrap: break-word;">
