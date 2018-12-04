@@ -54,7 +54,7 @@ namespace MyWebApp.Controllers
         {
 
             repository.AddComment(comment, postId);
-            return View("Project", repository.Get(postId));
+            return RedirectToAction("Project",new { id = repository.Get(postId).Id });
         }
 
     }
