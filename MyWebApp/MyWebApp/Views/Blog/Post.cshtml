@@ -27,19 +27,22 @@
     <div class="mt-3 ">
         @foreach (Comment c in Model.Comments)
         {
-            <div class="form-group container text-left   mt-2 mb-2" style="border-radius: 25px 25px 0px 25px; background-color: #222838;">
-                <div style="padding-top:15px; padding-bottom:5px">
-                    <h6 class="text-left font-weight-light" style="word-wrap: break-word;">@c.NickName pisze:</h6>
-                </div>
-                <div style=" padding-bottom:15px">
-                    <h6 class="text-left mb-3 font-weight-light " style="word-wrap: break-word;">@c.Text</h6>
-                </div>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <form class="form-group text-right" asp-controller="Blog" asp-action="RemoveComment" asp-route-commentId="@c.Id" asp-route-postId="@Model.Id" method="post">
-                        <button type="submit" class="btn font-weight-light btn-outline-danger mb-3 text-right">Usuń</button>
-                    </form>}
+        <div class="form-group container text-left   mt-2 mb-2" style="border-radius: 25px 25px 0px 25px; background-color: #222838;">
+            <div style="padding-top:5px; padding-bottom:0px">
+                <h6 class="text-left font-weight-light" style="word-wrap: break-word;">Napisano: @c.Created</h6>
             </div>
+            <div style="padding-top:0px; padding-bottom:5px">
+                <h6 class="text-left font-weight-light" style="word-wrap: break-word;">@c.NickName pisze:</h6>
+            </div>
+            <div style=" padding-bottom:15px">
+                <h6 class="text-left mb-3 font-weight-light " style="word-wrap: break-word;">@c.Text</h6>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+    {
+        <form class="form-group text-right" asp-controller="Blog" asp-action="RemoveComment" asp-route-commentId="@c.Id" asp-route-postId="@Model.Id" method="post">
+            <button type="submit" class="btn font-weight-light btn-outline-danger mb-3 text-right">Usuń</button>
+        </form>}
+        </div>
         }
     </div>
 
