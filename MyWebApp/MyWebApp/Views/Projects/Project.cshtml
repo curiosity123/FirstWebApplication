@@ -25,7 +25,7 @@
         <label class=" font-weight-light mt-4 " for="Autor">Wasze komentarze</label>
     </div>
     <div class="mt-3">
-        @foreach (Comment c in Model.Comments)
+        @foreach (Comment c in Model.Comments.OrderByDescending(x => x.Created))
         {
         <div class="container text-left   mt-2 mb-2" style="border-radius: 25px 25px 0px 25px;  background-color: #222838; ">
             <div style="padding-top:5px; padding-bottom:0px">

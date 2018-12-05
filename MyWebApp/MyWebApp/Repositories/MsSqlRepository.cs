@@ -60,9 +60,9 @@ namespace MyWebApp.Repositories
         public List<Post> GetAll(Category category)
         {
             if (category != 0)
-                return dbContext.Posts.ToList().Where(x => x.Category == category).ToList();
+                return dbContext.Posts.ToList().Where(x => x.Category == category).ToList().OrderBy(x => x.Created).Reverse().ToList(); 
             else
-                return dbContext.Posts.ToList();
+                return dbContext.Posts.ToList().OrderBy(x => x.Created).Reverse().ToList();
         }
 
         public void RemoveComment(Guid commentId, Guid postId)
