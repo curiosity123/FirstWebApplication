@@ -2,7 +2,7 @@
 @model Credentials
 
 
-<h1 class="container text-center mt-5  font-weight-light ">Logowanie do panelu admina</h1>
+<h1 class="container text-center mt-5  font-weight-normal ">Logowanie do panelu admina</h1>
 
 <form method="post" class="container text-center mt-5">
     
@@ -20,23 +20,23 @@
     </div>
     <div>
         <div class="form-group">
-            <input asp-for="RememberMe" type="checkbox" class="checkbox-inline" />
-            <label asp-for="RememberMe">Zapamiętać logowanie?</label>
+            <input asp-for="RememberMe" type="checkbox" class="checkbox-inline font-weight-normal" />
+            <label asp-for="RememberMe" class="font-weight-normal">Zapamiętać logowanie?</label>
             <span asp-validation-for="RememberMe" class="text-danger"></span>
         </div>
     </div>
 
-    <input class="btn btn-outline-success  font-weight-light  " type="submit" name="Login" value="Zaloguj" />
+    <input class="btn btn-success  font-weight-light  " type="submit" name="Login" value="Zaloguj" />
 
 </form>
 @if (ViewBag.Error != null)
 {
-    <div class="alert alert-warning  font-weight-light  text-center mt-3 mb-2">
+    <div class="alert alert-warning  font-weight-normal  text-center mt-3 mb-2">
         <strong>Błąd!</strong> @ViewBag.Error
     </div>
 }
 <div class="text-center mt-5">
-    <a class="btn btn-outline-primary  font-weight-light " asp-action="PostList" asp-controller="Blog">Powrót do listy</a>
+    <a class="btn btn-primary  font-weight-light " asp-action="PostList" asp-controller="Blog">Powrót do listy</a>
 </div>
 
 

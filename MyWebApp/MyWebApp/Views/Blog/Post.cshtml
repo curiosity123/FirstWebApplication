@@ -8,13 +8,13 @@
 
 
 <div class="container mt-3">
-    <h1 class="text-center font-weight-light" style="word-wrap: break-word;">@Model.Title</h1>
-    <h6 class="text-success  font-weight-light text-center">Utworzono: @Model.Created</h6>
+    <h1 class="text-center font-weight-normal" style="word-wrap: break-word;"> @Html.Raw(Model.Title)</h1>
+    <h6 class="font-weight-normal text-center">Utworzono: @Model.Created</h6>
 </div>
 
 <div class="container">
 
-    <div class="container  font-weight-light  mt-4" style="background-color: #222838; border-radius:5px;">
+    <div class="container   mt-4" style="background-color: white; border-radius:5px;">
         <div style="padding-top:15px; padding-bottom:5px">
             <div style="text-align: justify; max-width: 100%; max-height: 100%; word-wrap: break-word;">
                 @Html.Raw(Model.HtmlContent)
@@ -22,25 +22,25 @@
         </div>
     </div>
     <div class="form-group container">
-        <label class="font-weight-light mt-4 " for="Autor">Wasze komentarze</label>
+        <label class="font-weight-normal mt-4 " for="Autor">Wasze komentarze</label>
     </div>
     <div class="mt-3 ">
         @foreach (Comment c in Model.Comments.OrderByDescending(x=> x.Created))
         {
-        <div class="form-group container text-left   mt-2 mb-2" style="border-radius: 25px 25px 0px 25px; background-color: #222838;">
+        <div class="form-group container text-left   mt-2 mb-2" style="border-radius: 25px 25px 0px 25px; background-color: white;">
             <div style="padding-top:5px; padding-bottom:0px">
-                <h6 class="text-left font-weight-light" style="word-wrap: break-word;">Napisano: @c.Created</h6>
+                <h6 class="text-left font-weight-normal" style="word-wrap: break-word;">Napisano: @c.Created</h6>
             </div>
             <div style="padding-top:0px; padding-bottom:5px">
-                <h6 class="text-left font-weight-light" style="word-wrap: break-word;">@c.NickName pisze:</h6>
+                <h6 class="text-left font-weight-normal" style="word-wrap: break-word;">@c.NickName pisze:</h6>
             </div>
             <div style=" padding-bottom:15px">
-                <h6 class="text-left mb-3 font-weight-light " style="word-wrap: break-word;">@c.Text</h6>
+                <h6 class="text-left mb-3 font-weight-normal " style="word-wrap: break-word;">@c.Text</h6>
             </div>
             @if (User.Identity.IsAuthenticated)
     {
         <form class="form-group text-right" asp-controller="Blog" asp-action="RemoveComment" asp-route-commentId="@c.Id" asp-route-postId="@Model.Id" method="post">
-            <button type="submit" class="btn font-weight-light btn-outline-danger mb-3 text-right">Usuń</button>
+            <button type="submit" class="btn font-weight-light btn-danger mb-3 text-right">Usuń</button>
         </form>}
         </div>
         }
@@ -49,18 +49,18 @@
 
     <form method="post" class="container bg-transparent " style="border-radius: 25px 25px 25px 0px;  " asp-controller="Blog" asp-action="AddComment" asp-route-comment="@comment" asp-route-postId="@this.Model.Id">
 
-        <label class=" font-weight-light mt-2" for="Autor">Dodaj komentarz</label>
-        <div class="form-group  font-weight-light">
+        <label class=" font-weight-normal mt-2" for="Autor">Dodaj komentarz</label>
+        <div class="form-group  font-weight-normal">
             <label  for="Autor" >Autor</label>
             <input class="form-control" id="Autor" placeholder="Autor" asp-for="@comment.NickName" value="@comment.NickName"></>
         </div>
 
-        <div class="form-group  font-weight-light">
+        <div class="form-group  font-weight-normal">
             <label for="comment">Komentarz</label>
             <textarea class="form-control" placeholder="Wpisz swój komentarz" id="comment" style="height: 100px" asp-for="@comment.Text" value="@comment.Text"></textarea>
         </div>
 
-        <input class="btn btn-outline-success mb-3  font-weight-light" type="submit" name="save" value="Dodaj" />
+        <input class="btn btn-success mb-3  font-weight-light" type="submit" name="save" value="Dodaj" />
     </form>
 
 
@@ -69,7 +69,7 @@
 
 
     <div class="container text-center mt-2 mb-2">
-        <a class="btn btn-outline-info mb-4  font-weight-light" asp-action="PostList" asp-controller="Blog">Powrót do listy</a>
+        <a class="btn btn-info mb-4  font-weight-light" asp-action="PostList" asp-controller="Blog">Powrót do listy</a>
     </div>
 
 </div>

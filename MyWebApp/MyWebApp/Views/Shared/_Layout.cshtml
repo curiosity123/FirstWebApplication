@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 
 <style>
+
     header {
         background-color: gray
     }
@@ -21,7 +22,7 @@
         display: block;
         width: 0px;
         height: 2px;
-        background: #fec400;
+        background: #E33E35;
         transition: 0.2s;
     }
 
@@ -30,7 +31,7 @@
     }
 
     .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
-        color: #fec400;
+        color: #5cb85c;
     }
 
     .nav-link {
@@ -43,9 +44,8 @@
     }
 
     .dropdown-item:focus, .dropdown-item:hover {
-        background: #fec400;
+        background: #5cb85c;
     }
-
 </style>
 
 <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -58,11 +58,11 @@
 </head>
 
 
-<body style="background-color: #121622; color: #a6adbe;" class="font-weight-light">
+<body style="background-image: linear-gradient(to right, #81AED2,#F7F6F5); color: #1F3644;" class="font-weight-light">
     <header>
-        <nav class="navbar navbar-dark navbar-expand-md " style="background-color: #222838; ">
-            <div class="navbar-brand font-weight-light text-center mt-2 float-left " style="color: #a6adbe; ">
-                <h2 class="align-bottom font-weight-light ">Łukasz Adach  </h2>
+        <nav class="navbar navbar-dark navbar-expand-md" style="background-color: #1F3644;">
+            <div class="navbar-brand font-weight-light text-center mt-2 float-left " style="color: White; ">
+                <h2 class="align-bottom font-weight-bold ">Łukasz Adach  </h2>
             </div>
             <button class="navbar-toggler float-right" type="submit" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="navbar">
                 <span class="navbar-toggler-icon"></span>
@@ -71,27 +71,27 @@
             <div id="menu" class="collapse navbar-collapse navbar-bottom mt-3">
                 <ul class="nav navbar-nav ml-auto navbar-right mr-3">
                     <li class="nav-item ">
-                        <a class="nav-link " asp-controller="Blog" asp-action="PostList">Blog</a>
+                        <a class="nav-link " style="color: White; " asp-controller="Blog" asp-action="PostList">Blog</a>
                     </li>
+                    @*<li class="nav-item">
+                        <a class="nav-link  " style="color: White; " asp-controller="Projects" asp-action="ProjectsList">Projekty</a>
+                    </li>*@
                     <li class="nav-item">
-                        <a class="nav-link  " asp-controller="Projects" asp-action="ProjectsList">Projekty</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  text-nowrap" asp-controller="Home" asp-action="About">O mnie</a>
+                        <a class="nav-link  text-nowrap" asp-controller="Home" style="color: White; " asp-action="About">O mnie</a>
                     </li>
                     <li class="nav-item mr-3 ">
-                        <a class="nav-link" asp-controller="Home" asp-action="Contact">Kontakt</a>
+                        <a class="nav-link" asp-controller="Home" style="color: White; " asp-action="Contact">Kontakt</a>
                     </li>
                 </ul>
                 <div style="height:15px"> </div>
                 <ul class="nav navbar-nav navbar-right ">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a class="btn btn-outline-info font-weight-light" asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-in"></span>Wyloguj</a></li>
+                        <li><a class="btn btn-success font-weight-light" asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-in"></span>Wyloguj</a></li>
                     }
                     else
                     {
-                        <li><a class="btn btn-outline-info font-weight-light" asp-controller="Account" asp-action="Login"><span class="glyphicon glyphicon-log-in"></span>Panel admina</a></li>
+                        <li><a class="btn btn-success font-weight-light" asp-controller="Account" asp-action="Login"><span class="glyphicon glyphicon-log-in"></span>Panel admina</a></li>
                     }
                 </ul>
             </div>

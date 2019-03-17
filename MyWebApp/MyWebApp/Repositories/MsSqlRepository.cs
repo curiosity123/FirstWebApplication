@@ -42,6 +42,7 @@ namespace MyWebApp.Repositories
         {
             var u = (from x in dbContext.Posts where x.Id == post.Id select x).Include("Comments").FirstOrDefault();
             u.Title = post.Title;
+            u.BackgroundContent = post.BackgroundContent;
             u.ShortDescription = post.ShortDescription;
             u.HtmlContent = post.HtmlContent;
             u.Category = post.Category;

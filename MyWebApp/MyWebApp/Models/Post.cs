@@ -12,8 +12,9 @@ namespace MyWebApp.Models
         public DateTime Created { get; set; }
         [Display(Name = "Title")]
         [DataType(DataType.Text)]
-        [Required, MaxLength(500)]
+        [Required]
         public string Title { get; set; }
+        public string BackgroundContent { get; set; }
         public string ShortDescription { get; set; }
         public string HtmlContent { get; set; }
         public List<Comment> Comments{get;set;}

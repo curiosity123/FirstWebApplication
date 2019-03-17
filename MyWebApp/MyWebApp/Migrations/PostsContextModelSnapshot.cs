@@ -211,6 +211,8 @@ namespace MyWebApp.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("BackgroundContent");
+
                     b.Property<int>("Category");
 
                     b.Property<DateTime>("Created");
@@ -224,8 +226,7 @@ namespace MyWebApp.Migrations
                     b.Property<string>("ShortDescription");
 
                     b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(500);
+                        .IsRequired();
 
                     b.HasKey("Id");
 
