@@ -55,6 +55,9 @@
     <Content Include="node_modules\jquery\LICENSE.txt" />
     <Content Include="node_modules\jquery\package.json" />
     <Content Include="node_modules\jquery\src\.eslintrc.json" />
+    <Content Include="node_modules\other\layout\styles\layout.css" />
+    <Content Include="node_modules\other\layout\styles\PostList.css" />
+    <Content Include="node_modules\other\parallax\parallax.css" />
     <Content Include="node_modules\popper.js\package.json" />
     <Content Include="node_modules\summernote\coverage\Chrome 70.0.3538 %28Mac OS X 10.13.6%29\html\base.css" />
     <Content Include="node_modules\summernote\coverage\Chrome 70.0.3538 %28Mac OS X 10.13.6%29\html\index.html" />
@@ -817,6 +820,7 @@
     <None Include="node_modules\jquery\src\var\support.js" />
     <None Include="node_modules\jquery\src\var\toString.js" />
     <None Include="node_modules\jquery\src\wrap.js" />
+    <None Include="node_modules\other\parallax\parallax.js" />
     <None Include="node_modules\popper.js\dist\esm\popper-utils.js" />
     <None Include="node_modules\popper.js\dist\esm\popper-utils.js.map" />
     <None Include="node_modules\popper.js\dist\esm\popper-utils.min.js" />
