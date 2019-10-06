@@ -18,7 +18,7 @@
     </div>
 
 
-    <form method="post" class="container bg-transparent  text-center" style="border-radius: 25px 25px 25px 0px;  " asp-controller="Blog" asp-action="Filter" asp-route-category="@category">
+    <form method="post" class="container bg-transparent  text-center"  asp-controller="Blog" asp-action="Filter" asp-route-category="@category">
         <label class=" font-weight-bold mt-2">Wybierz kategorię</label>
         <select asp-for="@category" asp-items="Html.GetEnumSelectList<Category>()" onchange="this.form.submit()"></select>
     </form>
@@ -59,7 +59,7 @@
 
                     <div class="modal fade" id="ModalRemove" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered " role="document">
-                            <div class="modal-content" style="background-color: white;">
+                            <div class="modal-content" >
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLongTitle">Uwaga!</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
