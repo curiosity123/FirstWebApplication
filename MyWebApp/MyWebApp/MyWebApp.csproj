@@ -821,6 +821,7 @@
     <None Include="node_modules\jquery\src\var\toString.js" />
     <None Include="node_modules\jquery\src\wrap.js" />
     <None Include="node_modules\other\parallax\parallax.js" />
+    <None Include="node_modules\other\summerNote\summerNoteEdit.js" />
     <None Include="node_modules\popper.js\dist\esm\popper-utils.js" />
     <None Include="node_modules\popper.js\dist\esm\popper-utils.js.map" />
     <None Include="node_modules\popper.js\dist\esm\popper-utils.min.js" />

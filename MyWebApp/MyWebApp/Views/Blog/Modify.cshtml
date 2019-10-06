@@ -20,7 +20,6 @@
         <textarea asp-for="BackgroundContent" value="@Model.BackgroundContent" id="summernoteBackground"></textarea>
         <label asp-for="Title" class="font-weight-normal">Title</label>
         <textarea asp-for="Title" value="@Model.Title" id="summernote2"></textarea>
-        @*<input class="form-control font-weight-normal" asp-for="Title" value="@Model.Title"></>*@
 
         <div class="form-group mt-3">
             <input asp-for="IsProject" type="checkbox" class="checkbox-inline font-weight-normal" />
@@ -50,23 +49,6 @@
     </div>
 </form>
 
+<script src="~/node_modules/other/summerNote/summerNoteEdit.js"></script>
 
-<script>
-    $('#summernote').summernote({
-        placeholder: 'Write something ;) ',
-        tabsize: 2,
-        height: 500
-    });
-    $('#summernote2').summernote({
-        placeholder: 'Write something ;) ',
-        tabsize: 2,
-        height: 500
-    });
-    $('#summernoteBackground').summernote({
-        placeholder: 'Write something ;) ',
-        tabsize:3,
-        width: 300,
-        height: 300, 
-    });
-</script>
 
