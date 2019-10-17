@@ -2,15 +2,52 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="mt-3">
-    <h1 class="text-center  font-weight-light ">Kontakt</h1>
-</div>
 
-<div class="container">
-    <h6 class="text-center  mt-5 font-weight-bold">Email: lukasz.adach7@gmail.com</h6>
+<style>
+    /* unvisited link */
+    a:link {
+        color: white;
+    }
 
-    <div  class=" text-center mt-3" >
-        <a class="text-center font-weight-bold  mb-5" href="https://www.linkedin.com/in/lukaszprogramista">LinkedIn: linkedin.com/in/lukaszprogramista</a>
-    </div>
+    /* visited link */
+    a:visited {
+        color: white;
+    }
 
-</div>
+    /* mouse over link */
+    a:hover {
+        color: white;
+    }
+
+    /* selected link */
+    a:active {
+        color: white;
+    }
+</style>
+
+
+
+    <div class="mt-3 mb-5" >
+    <h1 class="text-center  font-weight-normal " > Kontakt</h1 >
+    </div >
+
+
+    <table class="table table-borderless text-left w-25 " >
+    <tr >
+    <td > <a class="fas fa-envelope-square fa-5x  icon-white icon-shaker" onclick="copyEmail()" href="" > </a > </td >
+    <td class=" align-middle " > <a class=" font-weight-bold" href="lukaszadach7@gmail.com" > lukaszadach7@gmail.com</a > </td >
+    </tr >
+    <tr >
+    <td > <a class="fab fa-github-square fa-5x icon-white icon-shaker " href="https://github.com/curiosity123" > </a > </td >
+    <td class="align-middle" > <a class=" font-weight-bold " href="https://github.com/curiosity123" > github.com/curiosity123</a > </td>
+    </tr >
+    <tr >
+    <td > <a class="fab fa-linkedin fa-5x icon-white  icon-shaker" href="https://linkedin.com/in/lukaszprogramista"> </a > </td >
+    <td class=" align-middle" > <a class=" font-weight-bold " href="https://linkedin.com/in/lukaszprogramista" > linkedin.com/in/lukaszprogramista</a > </td >
+    </tr >
+    <tr >
+    </table >
+
+
+
+
