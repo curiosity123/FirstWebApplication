@@ -39,17 +39,17 @@
 <table class="table table-borderless text-left w-25 ">
     <tr>
         <td>
-            <h1 class="fas fa-envelope-square fa-5x m-3 icon-white icon-shaker" href="" onclick="myFunction()" on onmouseover="MakeVisible()" onmouseout="outFunc()"></h1>
+            <h1 class="fas fa-envelope-square fa-5x m-1 icon-white icon-shaker" href="" onclick="myFunction()" on onmouseover="MakeVisible()" onmouseout="outFunc()"></h1>
         </td>
 
-        <td> <a class="fab fa-linkedin fa-5x icon-white m-3  icon-shaker" href="https://linkedin.com/in/lukaszprogramista"> </a> </td>
+        <td> <a class="fab fa-linkedin fa-5x icon-white m-1  icon-shaker" href="https://linkedin.com/in/lukaszprogramista"> </a> </td>
 
-        <td> <a class="fab fa-github-square fa-5x m-3 icon-white icon-shaker " href="https://github.com/curiosity123"> </a> </td>
+        <td> <a class="fab fa-github-square fa-5x m-1 icon-white icon-shaker " href="https://github.com/curiosity123"> </a> </td>
 
     </tr>
     <tr>
-        <td>
-            <span class="tooltiptext font-weight-bold " id="myTooltip" style="background-color:black; color:white; padding:5px; max-width:90px; border-radius:10px;display: inline-block;position:relative; ">Click to copy to clipboard</span>
+        <td colspan="3">
+            <span class="tooltiptext font-weight-bold " id="myTooltip" style="background-color:black; color:white; padding:5px;  border-radius:10px;display: inline-block;position:relative; ">Click to copy to clipboard</span>
         </td>
     </tr>
 </table>
@@ -78,12 +78,12 @@
         document.execCommand("copy");
 
         var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Gotowe!";
+        tooltip.innerHTML = "E-mail skopiowany do schowka";
     }
 
     function outFunc() {
         var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Skopiuj adres do schowka";
+        tooltip.innerHTML = "Skopiuj e-mail do schowka";
         tooltip.setAttribute("hidden", "");
     }
 </script>
