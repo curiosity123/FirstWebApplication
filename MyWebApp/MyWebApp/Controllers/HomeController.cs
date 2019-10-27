@@ -10,7 +10,7 @@ namespace MyWebApp.Controllers
         public IActionResult Index()
         {
             ViewBag.Title = "Łukasz Adach";
-            return RedirectToAction("PostList","Blog");
+            return RedirectToAction("PostList","Projects");
         }
 
 
