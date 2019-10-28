@@ -1,90 +1,27 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-<style>
-    /* unvisited link */
-    a:link {
-        color: white;
-    }
-
-    /* visited link */
-    a:visited {
-        color: white;
-    }
-
-    /* mouse over link */
-    a:hover {
-        color: white;
-    }
-
-    /* selected link */
-    a:active {
-        color: white;
-    }
-</style>
-
-
-
+<link href="~/node_modules/other/Contact/Contact.css" rel="stylesheet" />
 
 <div class="mt-3 mb-5">
-    <h1 class="text-center  font-weight-normal "> Kontakt</h1>
+    <h1 class="text-center  font-weight-normal ">Kontakt</h1>
 </div>
 
 <input style="opacity:0;" type="text" value="lukasz.adach7@gmail.com" id="myInput">
-
-
 
 <table class="table table-borderless text-left w-25 ">
     <tr>
         <td>
             <h1 class="fas fa-envelope-square fa-5x m-1 icon-white icon-shaker" href="" onclick="myFunction()" on onmouseover="MakeVisible()" onmouseout="outFunc()"></h1>
         </td>
-
         <td> <a class="fab fa-linkedin fa-5x icon-white m-1  icon-shaker" href="https://linkedin.com/in/lukaszprogramista"> </a> </td>
-
         <td> <a class="fab fa-github-square fa-5x m-1 icon-white icon-shaker " href="https://github.com/curiosity123"> </a> </td>
-
     </tr>
     <tr>
         <td colspan="3">
-            <span class="tooltiptext font-weight-bold " id="myTooltip" style="background-color:black; color:white; padding:5px;  border-radius:10px;display: inline-block;position:relative; ">Click to copy to clipboard</span>
+            <span class="tooltiptext font-weight-bold " id="myTooltip">Click to copy to clipboard</span>
         </td>
     </tr>
 </table>
 
-
-
-<script>
-
-
-
-    window.onload = function () {
-        outFunc();
-    };
-
-    function MakeVisible() {
-
-        document.getElementById("myTooltip").removeAttribute("hidden");
-    }
-
-
-    function myFunction() {
-        var copyText = document.getElementById("myInput");
-
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        document.execCommand("copy");
-
-        var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "E-mail skopiowany do schowka";
-    }
-
-    function outFunc() {
-        var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Skopiuj e-mail do schowka";
-        tooltip.setAttribute("hidden", "");
-    }
-</script>
-
+<script src="~/node_modules/other/Contact/Popup.js"></script>

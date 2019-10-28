@@ -10,7 +10,6 @@
 <link href="~/node_modules/bs4-summernote/dist/summernote-bs4.css" rel="stylesheet" />
 
 
-
 <div class="text-center mt-3 mb-5"><h1 class="font-weight-normal">@ViewBag.Title</h1></div>
 
 
@@ -30,7 +29,6 @@
             <label asp-for="IsPublished" class="font-weight-normal">Opublikowany?</label>
         </div>
 
-
         <label asp-for="Category" class="font-weight-normal">Category</label>
         <select class="form-control font-weight-normal" asp-for="Category" asp-items="@Html.GetEnumSelectList<Category>()"></select>
 
@@ -38,14 +36,12 @@
         <textarea class="form-control mb-2 font-weight-normal" asp-for="ShortDescription" value="@Model.ShortDescription"></textarea>
     </div>
 
-
     <label class="mt-2 font-weight-normal" asp-for="HtmlContent">Content</label>
     <textarea asp-for="HtmlContent" id="summernote"></textarea>
 
     <div class="container text-center mt-3 mb-5">
         <a class="btn btn-danger font-weight-normal  float-left " asp-action="PostList" asp-controller="Projects">Porzuć</a>
         <input class="btn btn-success  font-weight-normal " type="submit" name="save" value="@ViewBag.ButtonTitle" />
-
     </div>
 </form>
 

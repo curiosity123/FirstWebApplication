@@ -55,6 +55,7 @@
     <Content Include="node_modules\jquery\LICENSE.txt" />
     <Content Include="node_modules\jquery\package.json" />
     <Content Include="node_modules\jquery\src\.eslintrc.json" />
+    <Content Include="node_modules\other\Contact\Contact.css" />
     <Content Include="node_modules\other\layout\styles\layout.css" />
     <Content Include="node_modules\other\layout\styles\PostList.css" />
     <Content Include="node_modules\other\parallax\parallax.css" />
@@ -820,6 +821,8 @@
     <None Include="node_modules\jquery\src\var\support.js" />
     <None Include="node_modules\jquery\src\var\toString.js" />
     <None Include="node_modules\jquery\src\wrap.js" />
+    <None Include="node_modules\other\ContactPopup.js" />
+    <None Include="node_modules\other\Contact\Popup.js" />
     <None Include="node_modules\other\parallax\parallax.js" />
     <None Include="node_modules\other\summerNote\summerNoteEdit.js" />
     <None Include="node_modules\popper.js\dist\esm\popper-utils.js" />

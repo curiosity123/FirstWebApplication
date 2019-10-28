@@ -4,8 +4,6 @@
     Comment comment = new Comment();
 }
 
-
-
 <div class="container mt-3">
     <h1 class="text-center font-weight-normal" style="word-wrap: break-word;"> @Html.Raw(Model.Title)</h1>
     <h6 class="font-weight-normal text-center">Utworzono: @Model.Created</h6>
@@ -13,7 +11,7 @@
 
 <div class="container">
 
-    <div class="container   mt-4" style="background-color: white;">
+    <div class="container mt-4" style="background-color: white;">
         <div style="padding-top:15px; padding-bottom:5px">
             <div style="text-align: justify; max-width: 100%; max-height: 100%; word-wrap: break-word;">
                 @Html.Raw(Model.HtmlContent)
@@ -28,13 +26,13 @@
         {
             <div class="form-group container text-left   mt-2 mb-2">
                 <div style="padding-top:5px; padding-bottom:0px">
-                    <h6 class="text-left font-weight-normal" style="word-wrap: break-word;">Napisano: @c.Created</h6>
+                    <h6 class="text-left font-weight-normal">Napisano: @c.Created</h6>
                 </div>
                 <div style="padding-top:0px; padding-bottom:5px">
-                    <h6 class="text-left font-weight-normal" style="word-wrap: break-word;">@c.NickName pisze:</h6>
+                    <h6 class="text-left font-weight-normal">@c.NickName pisze:</h6>
                 </div>
                 <div style=" padding-bottom:15px">
-                    <h6 class="text-left mb-3 font-weight-normal " style="word-wrap: break-word;">@c.Text</h6>
+                    <h6 class="text-left mb-3 font-weight-normal ">@c.Text</h6>
                 </div>
                 @if (User.Identity.IsAuthenticated)
                 {
@@ -45,7 +43,6 @@
         }
     </div>
 
-
     <form method="post" class="container bg-transparent " asp-controller="Projects" asp-action="AddComment" asp-route-comment="@comment" asp-route-postId="@this.Model.Id">
 
         <label class=" font-weight-normal mt-2" for="Autor">Dodaj komentarz</label>
@@ -53,19 +50,12 @@
             <label for="Autor">Autor</label>
             <input class="form-control" id="Autor" placeholder="Autor" asp-for="@comment.NickName" value="@comment.NickName"></>
         </div>
-
         <div class="form-group  font-weight-normal">
             <label for="comment">Komentarz</label>
             <textarea class="form-control" placeholder="Wpisz swój komentarz" id="comment" asp-for="@comment.Text" value="@comment.Text"></textarea>
         </div>
-
         <input class="btn btn-success mb-3  font-weight-light" type="submit" name="save" value="Dodaj" />
     </form>
-
-
-
-
-
 
     <div class="container text-center mt-2 mb-2">
         <a class="btn btn-info mb-4  font-weight-light" asp-action="PostList" asp-controller="Projects">Powrót do listy</a>
