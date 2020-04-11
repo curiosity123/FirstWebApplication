@@ -4,3 +4,5 @@
 
 /MyWebApp/MyWebApp/AppSettings.json
 /MyWebApp/MyWebApp/.gitignore
+/MyWebApp/MyWebApp/bin/Debug/netcoreapp2.0/App.Config
+/MyWebApp/MyWebApp/bin/Debug/netcoreapp2.0/AppSettings.json

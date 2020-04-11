@@ -1,0 +1,70 @@
+﻿@{
+    @using MyWebApp.Models
+    @model Post
+    Comment comment = new Comment();
+}
+
+    <link href="~/node_modules/other/layout/styles/post.css" rel="stylesheet" />
+
+<div class="container mt-3">
+    <h1 class="text-center font-weight-bold text-black" style="word-wrap: break-word;"> @Html.Raw(Model.Title)</h1>
+    <h6 class="font-weight-normal text-center text-black">Utworzono: @Model.Created</h6>
+</div>
+
+<div class="container">
+
+    <div class="container mt-4 post-text-background" >
+        <div class="pt-4 pb-4">
+            <div class="post-text-content">
+                <code>
+                    @Html.Raw(Model.HtmlContent)
+                </code>
+            </div>
+        </div>
+    </div>
+    <div class="form-group container">
+        <label class="font-weight-normal mt-4 " for="Autor">Wasze komentarze</label>
+    </div>
+    <div class="mt-3 ">
+        @foreach (Comment c in Model.Comments.OrderByDescending(x => x.Created))
+        {
+            <div class="form-group container text-left  mt-1 mb-1 post-text-background ">
+                <div class="pt-3 pb-0">
+                    <h6 class="text-left font-weight-normal text-black">Napisano: @c.Created</h6>
+                </div>
+                <div class="pt-0 pb-3">
+                    <h6 class="text-left font-weight-normal text-black">@c.NickName pisze:</h6>
+                </div>
+                <div class="pb-0">
+                    <h6 class="text-left  font-weight-normal  text-black">@c.Text</h6>
+                </div>
+                <hr  class="style-three">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <form class="form-group text-right" asp-controller="AllPosts" asp-action="RemoveComment" asp-route-commentId="@c.Id" asp-route-postId="@Model.Id" method="post">
+                        <button type="submit" class="btn font-weight-light btn-danger mb-3 text-right">Usuń</button>
+                    </form>}
+            </div>
+        }
+    </div>
+
+    <form method="post" class="container  post-text-background" asp-controller="AllPosts" asp-action="AddComment" asp-route-comment="@comment" asp-route-postId="@this.Model.Id">
+
+        <label class=" font-weight-normal mt-2 text-black" for="Autor">Dodaj komentarz</label>
+        <div class="form-group  font-weight-normal">
+            <label for="Autor" class="text-black">Autor</label>
+            <input class="form-control" id="Autor" placeholder="Autor" asp-for="@comment.NickName" value="@comment.NickName"></>
+        </div>
+        <div class="form-group  font-weight-normal">
+            <label for="comment" class="text-black">Komentarz</label>
+            <textarea class="form-control  text-black" placeholder="Wpisz swój komentarz" id="comment" asp-for="@comment.Text" value="@comment.Text"></textarea>
+        </div>
+        <input class="btn btn-success mb-3  font-weight-light" type="submit" name="save" value="Dodaj" />
+    </form>
+
+    <div class="container text-center mt-2 mb-2">
+        <a class="btn btn-info mb-4  font-weight-light" asp-action="PostList" asp-controller="AllPosts">Powrót do listy</a>
+    </div>
+
+</div>
+

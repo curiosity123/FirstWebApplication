@@ -5,9 +5,9 @@
 
 <!DOCTYPE html>
 <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="~/node_modules/other/parallax/parallax.css" rel=" stylesheet" />
 <link href="~/node_modules/other/layout/styles/layout.css" rel=" stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
 <html>
 
 <head>
@@ -21,19 +21,17 @@
         <nav class="navbar navbar-dark navbar-expand-md">
 
             <div class="navbar-brand font-weight-light text-center mt-2 float-left">
-                <h2 class="align-bottom font-weight-bold">Łukasz Adach</h2>
-                <h2 class="align-bottom font-weight-bold">Łukasz Adach</h2>
-                <h2 class="align-bottom font-weight-bold">Łukasz Adach</h2>
+                <h1 class="font-weight-bold">Łukasz Adach</h1>
             </div>
 
             <button class="navbar-toggler float-right" type="submit" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div id="menu" class="collapse navbar-collapse navbar-bottom mt-3">
+            <div id="menu" class="collapse navbar-collapse navbar-bottom mt-3 ">
                 <ul class="nav navbar-nav ml-auto navbar-right ">
                     <li class="nav-item ">
-                        <a class="nav-link " asp-controller="Projects" asp-action="PostList">Projekty</a>
+                        <a class="nav-link " asp-controller="AllPosts" asp-action="PostList">Wpisy</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  text-nowrap" asp-controller="Home" asp-action="About">O mnie</a>
@@ -45,7 +43,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Account" asp-action="Logout" style="">Wyloguj</a>
+                            <a class="nav-link" asp-controller="Account" asp-action="Logout">Wyloguj</a>
                         </li>
                     }
                     else
@@ -64,4 +62,4 @@
 </html>
 <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
 <script src="~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/node_modules/other/parallax/parallax.js"></script>
+
